@@ -1,1 +1,1 @@
-# FPGA Tutorials for AMD boards
+# FPGA Tutorials

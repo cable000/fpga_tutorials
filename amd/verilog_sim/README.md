@@ -50,3 +50,5 @@ After editing the files you can run SIMULATION->Run Simulation and a waveform wi
 ![Waveform](waveform.png)
 
 To view the RTL schematic of the diagram you can click on RTLAnalysis->Open Elaborated Design->Schematic
+
+![RTL schematic](schematic.png)

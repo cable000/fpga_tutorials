@@ -25,5 +25,5 @@ Furthermore on this page, there are settings to configure such as the width of t
 
 
 Citations:
-Vivado Tutorial: Turn Verilog IP into AXI Module /
+Vivado Tutorial: Turn Verilog IP into AXI Module \
 https://www.youtube.com/watch?v=mBRUK196qIA

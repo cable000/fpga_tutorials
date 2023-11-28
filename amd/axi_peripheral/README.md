@@ -24,7 +24,7 @@ The next page allows for you to set the number of master and slave AXI interface
 Furthermore on this page, there are settings to configure such as the width of the data bus of the AXI interface and the number of registers available to write to/read from. The default data width is 32 bits which is what I stuck with. And the minimum number of registers is 4, which is plenty for the C application to pass data to the QDSP-6061 driver.
 
 
-Citations: \
+Citations:\
 
 Vivado Tutorial: Turn Verilog IP into AXI Module \
 https://www.youtube.com/watch?v=mBRUK196qIA

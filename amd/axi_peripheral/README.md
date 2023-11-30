@@ -86,7 +86,7 @@ endmodule
 
 Move to the Package IP - SimpleLogicModule and select the File Groups. Click on the Merge changes from File Groups Wizard. There now should be a green check next to the File Groups. Finally on the Review and Package tab select Re-Package IP and close out this window by selecting ok.
 
-Going back to the initial Vivado window lets now create a simple design using this new AXI IP peripheral. To create a new design select IP Integrator->Create Block Design. Add the Zynq UltraScale+ MPSoC and the SimpleLogicModule we just created. Select all the Designer Assistance suggestions to make the necessary connections. At this point you should be complete and now we can synthesize the design to test on the hardware. In the Flow Navigator under Program and Debug select Generate Bistream to build the bitstream.
+Going back to the initial Vivado window lets now create a simple design using this new AXI IP peripheral. To create a new design select IP Integrator->Create Block Design. Add the Zynq UltraScale+ MPSoC and the SimpleLogicModule we just created. Select all the Designer Assistance suggestions to make the necessary connections. When this is finished create a HDL wrapper around the design by right clicking the project design under the Sources tab and select 'Create HDL wrapper' . At this point you should be complete and now we can synthesize the design to test on the hardware. In the Flow Navigator under Program and Debug select Generate Bistream to build the bitstream.
 
 
 

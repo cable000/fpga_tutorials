@@ -14,19 +14,21 @@ To add a verilog file select AddSources->Add or Create design sources. On the ne
 
 Edit the <b>half_adder.v</b> with the following code:
 
-<code>
+`verilog`
+
+```
     module half_adder(a,b,sum,carry);
     input a,b;
     output sum,carry;
     assign sum=a^b;
     assign carry=a&b;
     endmodule
-</code>
+```
 
 
 Add the following to the test bench code <b>half_adder_tb.v</b>:
 
-<code>
+```
     module half_adder_tb();
     reg t_a,t_b;
     wire SUM,CARRY;
@@ -43,7 +45,7 @@ Add the following to the test bench code <b>half_adder_tb.v</b>:
     $stop;
     end
     endmodule
-</code>
+```
 
 After editing the files you can run SIMULATION->Run Simulation and a waveform window will open. To see the waveform you may have to zoom in. Every 10 ns of the waveform the inputs and outputs will change.
 

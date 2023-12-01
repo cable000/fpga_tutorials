@@ -42,6 +42,7 @@ SimpleLogicModule SimpleLogicModule_inst(
   .sum(sum),
   .difference(difference),
   .bitwiseAnd(bitwiseAnd),
+  .bitwiseOr(bitwiseOr),
   .bitwiseXor(bitwiseXor),
   .bitwiseXNor(bitwiseXNor)
 );

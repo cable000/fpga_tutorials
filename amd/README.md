@@ -1,4 +1,4 @@
-# FPGA Tutorials for AMD based boards and software
+# FPGA Tutorials 
 
 ### External tutorials
 AMD Vitis-HLS-Introductory tutorials \

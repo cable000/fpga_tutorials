@@ -1,7 +1,9 @@
 # FPGA Tutorials 
 
 ### Tutorials
-##### HDL Tutorials
+##### AMD HDL Tutorials
+axi_peripheral - Tutorials for creating an AXI wrapper around HDL code
+
 
 ### External tutorials
 AMD Vitis-HLS-Introductory tutorials \

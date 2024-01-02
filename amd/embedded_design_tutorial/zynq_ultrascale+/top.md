@@ -1,6 +1,6 @@
 # Zynq Ultrascale+ MPSoC Embedded Design Tutorial
 
-This document provides an introduction to using the Vivado® Design Suite flow for the Xilinx® Zynq|reg| UltraScale+™ MPSoC ZCU102 Rev 1.0 and Rev 1.1 evaluation boards. The tool used is the Vitis™ unified software platform.
+This document provides an introduction to using the Vivado® Design Suite flow for the Xilinx® Zynq|reg| UltraScale+™ MPSoC ZCU104 and RFSoC ZCU111 evaluation boards. The tool used is the Vitis™ unified software platform.
 
 The best way to learn a tool is to use it. This guide provides opportunities for you to work with the tools under discussion. Specifications for sample projects are given in the example sections, along with an explanation of what is happening behind the scenes. Each chapter and examples are meant to showcase different aspects of embedded design. The example takes you through the entire flow to complete the learning and then moves on to another topic.
 

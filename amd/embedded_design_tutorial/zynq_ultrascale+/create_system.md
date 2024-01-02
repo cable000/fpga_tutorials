@@ -69,6 +69,11 @@ The Create Block Design wizard opens.
 The Diagram view opens with a message stating that this design is empty. The next step is to add some IP from the catalog.
 
 4. Click **Add IP** ![](add.png).
+5. In the search box, type <zynq> to find the Zynq device IP.
+6. Double-click the **Zynq UltraScale+ MPSoC IP** to add it to the block design.
+
+The Zynq UltraScale+ MPSoC processing system IP block appears in the Diagram view, as shown in the following figure.
+![](impage2.png)
 
 
 

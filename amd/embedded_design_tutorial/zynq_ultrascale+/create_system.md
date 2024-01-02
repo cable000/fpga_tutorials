@@ -25,10 +25,14 @@ This example design requires no input files. We will create the Vivado design fr
 
 The output of this example design is the hardware configuration XSA. It will be used for further software development.
 
-<ul>
-<li>Input: N/A</li>
-<li>Output: edt_zcu111_wrapper.xsa</li>
-</ul>
+-Input: N/A</li>
+-Output: edt_zcu111_wrapper.xsa</li>
+
+
+### Starting Your Design
+<ol>
+  
+</ol>
 
 
 

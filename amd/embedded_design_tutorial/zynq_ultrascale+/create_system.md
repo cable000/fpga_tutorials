@@ -33,11 +33,16 @@ The output of this example design is the hardware configuration XSA. It will be 
 2. In the Vivado Quick Start page, click **Create Project** to open the New Project wizard.
 3. Use the information in the following table to make selections in each of the wizard screen.
 
-| **Screen**    | **System Property** | **Setting or Command to Use** |
-| ------------- | ------------------- | ----------------------------- |
-| Project Name  | Project Name        | edt_zcu111                    |
-|               | Project Location    | Select a folder               |
-
+| **Screen**           | **System Property**                | **Setting or Command to Use** |
+| -------------------- | ---------------------------------- | ----------------------------- |
+| Project Name         | Project Name                       | edt_zcu111                    |
+|                      | Project Location                   | Select a folder               |
+| Project Type         | Create Project Sub-directory       | Leave checked                 |
+|                      | Specify type of project to create  | RTL Project                   |
+|                      | Don't specify sources at this time | Leave checked                 |
+| Default Part         | Select                             | Select **Boards** tab         |
+|                      | Display Name                       | Select ZCU111 Board           |
+| New Project Summrary | Project Summary                    | Review project summary        |
 
 
 

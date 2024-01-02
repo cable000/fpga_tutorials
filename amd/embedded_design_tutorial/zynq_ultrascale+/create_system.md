@@ -29,9 +29,13 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 ### Starting Your Design
 
-1. Launch the vivado Design Suite.
+1. Launch the Vivado Design Suite.
 2. In the Vivado Quick Start page, click **Create Project** to open the New Project wizard.
 3. Use the information in the following table to make selections in each of the wizard screen.
+
+| **Screen**    | **System Property** | **Setting or Command to Use** |
+| Project Name  | Project Name        | edt_zcu111                    |
+|               | Project Location    | Select a folder               |
 
 
 

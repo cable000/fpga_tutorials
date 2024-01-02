@@ -5,11 +5,9 @@ This chapter demonstrates how to use the Vivado® Design Suite to develop an emb
 
 The Zynq UltraScale+ device consists of quad-core Arm® Cortex™-A53-based APU, dual-core Arm® Cortex™-R5F RPU, Mali™ 400 MP2 GPU, many hard Intellectual Property (IP) components, and Programmable Logic (PL). This offering can be used in two ways:
 
-<ul>
-  <li>The Zynq UltraScale+ PS can be used in a standalone mode, without attaching any additional fabric IP.</li>
 
-  <li>IP cores can be instantiated in fabric and attached to the Zynq UltraScale+ PS as a PS+PL combination.</li>
-</ul>
+- The Zynq UltraScale+ PS can be used in a standalone mode, without attaching any additional fabric IP.</li>
+- IP cores can be instantiated in fabric and attached to the Zynq UltraScale+ PS as a PS+PL combination.</li>
 
 ## Zynq UltraScale+ System Configuration
 
@@ -30,9 +28,10 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 
 ### Starting Your Design
-<ol>
-  
-</ol>
+
+1. Launch the vivado Design Suite.
+2. In the Vivado Quick Start page, click **Create Project** to open the New Project wizard.
+3. Use the information in the following table to make selections in each of the wizard screen.
 
 
 

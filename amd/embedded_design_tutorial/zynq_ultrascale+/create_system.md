@@ -44,6 +44,13 @@ The output of this example design is the hardware configuration XSA. It will be 
 |                      | Display Name                       | Select ZCU111 Board           |
 | New Project Summrary | Project Summary                    | Review project summary        |
 
+4. Click **Finish**. The New Project wizard closes and the project you just created opens in the Vivado design tool.
 
+### Creating a Block Design Project
 
+You will now use the IP integrator to create a block design project.
+
+1. In the Flow Navigator pane, exand IP integrator and click **Create Block Design**.
+
+!(image1.png)
 

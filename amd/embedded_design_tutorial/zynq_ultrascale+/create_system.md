@@ -50,7 +50,25 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 You will now use the IP integrator to create a block design project.
 
-1. In the Flow Navigator pane, exand IP integrator and click **Create Block Design**.
+1. In the Flow Navigator pane, expand IP integrator and click **Create Block Design**.
 
 ![](image1.png)
+
+The Create Block Design wizard opens.
+
+2. Use the following information to make selections in the Create Block Design wizard.
+   
+| **Screen**           | **System Property**                | **Setting or Command to Use** |
+| -------------------- | ---------------------------------- | ----------------------------- |
+| Create Block Design  | Design Name                        | edt_zcu111                    |
+|                      | Directory                          | <Local to Project             |
+|                      | Specify Source                     | Set Design Sources            |
+
+3. Click **OK.**
+
+The Diagram view opens with a message stating that this design is empty. The next step is to add some IP from the catalog.
+
+4. Click **Add IP** ![](add.png).
+
+
 

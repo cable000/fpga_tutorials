@@ -52,5 +52,5 @@ You will now use the IP integrator to create a block design project.
 
 1. In the Flow Navigator pane, exand IP integrator and click **Create Block Design**.
 
-![](/image1.png)
+![](image1.png)
 

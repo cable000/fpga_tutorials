@@ -81,6 +81,10 @@ Now that you have added the processing system for the Zynq MPSoC to the design, 
 
 1. Double-click the **Zynq UltraScale+ Processing System** block in the Block Diagram window.
 
+The Re-customize IP view opens, as shown in the following figure. Notice that by default, the processor system does not have any peripherals connected.
+
+![](image3.png)
+
 
 
 

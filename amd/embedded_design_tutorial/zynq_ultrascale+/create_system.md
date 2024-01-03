@@ -75,5 +75,12 @@ The Diagram view opens with a message stating that this design is empty. The nex
 The Zynq UltraScale+ MPSoC processing system IP block appears in the Diagram view, as shown in the following figure.
 ![](image2.png)
 
+### Managing the Zynq UltraScale+ Processing System in Vivado
+
+Now that you have added the processing system for the Zynq MPSoC to the design, you can begin managing the available options.
+
+1. Double-click the **Zynq UltraScale+ Processing System** block in the Block Diagram window.
+
+
 
 

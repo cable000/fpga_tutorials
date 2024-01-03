@@ -48,3 +48,28 @@ The following steps show how to create a platform project with a standalone doma
 
 Vitis IDE Launcher
 
+**Note** If the directory doesn’t exist, the Vitis software platform will create it.
+
+3. In the Vitis IDE, go to **File → New → Platform Project.**
+4. In the Create New Platform page, enter the platform name **zcu111_edt** and click **Next**.
+5. In the Platform view, go with the default tab **Create from hardware specification (XSA).**
+
+**Note** Use the **Select a platform from repository** tab when you have a pre-built platform and you’d like to copy it to local to modify it.
+
+6. Click **Browse…** to select the XSA file exported from previous chapter.
+7. Select the preferred operating system, processor, and architecture.
+
+![](images/two/image2.png)
+
+| **Screen**                       | **Property**                 |
+|----------------------------------| -----------------------------|
+| Operating System                 | Standalone                   |
+| Processor                        | psu_cortexa53_0              |
+| Architecture                     | 64-bit                       |
+| Generate Boot Components         | Keep it checked              |
+| Target processor to create FSBL  | psu_cortexa53_0              |
+   
+
+
+
+

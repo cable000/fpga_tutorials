@@ -25,4 +25,24 @@ The main processing units in the Zynq UltraScale+ processing system are listed b
 
 The platform project reads in hardware information from the XSA file and contains the runtime environment for the above processing units. Application software can link against the libraries generated in the platform project.
 
+## Example Input and Output Files¶
+
+- Input: hardware handoff XSA file (**edt_zcu111_wrapper.xsa**)
+- Output:
+  - Standalone BSP libraries for Arm Cortex-A53
+  - Boot components (FSBL: **zynqmp.elf** and PMUFW: **pmufw.elf**)
+ 
+## Creating the Platform Project
+
+The following steps show how to create a platform project with a standalone domain for Arm Cortex-A53.
+
+1. Launch the Vitis IDE:
+
+  - From the open Vivado IDE, click Tools → Launch Vitis IDE; or
+  - From Windows Start menu, select Xilinx Design Tools → Xilinx Vitis 2021.2; or
+  - Double-click the C:\Xilinx\Vitis\2021.2\bin\vitis.bat file.
+
+2. Select the workspace C\edt\edt_zcu102_workspace and continue.
+
+![](images/image2_1.png)
 

@@ -85,6 +85,22 @@ The Re-customize IP view opens, as shown in the following figure. Notice that by
 
 ![](images/image3.jpeg)
 
+2. Click **Cancel** to exit the view without making changes to the design.
+   
+In the Block Diagram window, notice the message stating that designer assistance is available, as shown in the following figure. When designer assistance is available, you can click the link to have Vivado perform that step in your design.
+
+![](images/image4.png)
+
+3. You will now use a preset template created for the ZCU111 board. Click the **Run Block Automation** link.
+
+The Run Block Automation view opens.
+
+4. Click **OK** to accept the default processor system options and make default pin connections.
+
+This configuration wizard enables many peripherals in the Processing System with some multiplexed I/O (MIO) pins assigned to them according to the board layout of the ZCU102 board. For example, UART0 and UART1 are enabled. The UART signals are connected to a USB-UART connector through UART to the USB converter chip on the ZCU102 board.
+
+
+
 
 
 

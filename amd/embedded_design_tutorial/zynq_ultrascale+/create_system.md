@@ -120,7 +120,40 @@ The PS-PL AXI Master interface enables AXI HPM0 FPD and AXI HPM1 FPD in the defa
 
 ![](images/image7.png)
 
-10. Click *OK* to close the Re-customize IP wizard.
+10. Click **OK** to close the Re-customize IP wizard.
+
+### Validating the Design, Creating the Wrapper, and Generating the Block Design¶
+
+The block design provides all the IP configuration and block connection information. Vivado can validate the block design before running synthesis and implementation. This can help save time if the design has errors. After validation, generate the source files from the block design so that the synthesizer can consume and process them. You also need to generate a wrapper for the block design because Vivado requires the design top to be an HDL file.
+
+1. Right-click in the white space of the Block Diagram view and select **Validate Design.** Alternatively, you can press the **F6** key.
+
+A message dialog box that states “Validation successful. There are no errors or critical warnings in this design” opens.
+
+2. Click **OK** to close the message.
+3. In the Block Design view, click the **Sources** page.
+4. Click **Hierarchy.**
+5. Under Design Sources, right-click **edt_zcu111** and select **Create HDL Wrapper.**
+
+The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wrapper file for the processor subsystem.
+
+**Tip** The HDL wrapper is a top-level entity required by the design tools.
+
+6. Select **Let Vivado Manage Wrapper** and auto-update and click **OK.**
+
+7. In the Block Diagram, Sources window, under Design Sources, you can see **edt_zcu111_wrapper** is created by Vivado. Expand the hierarchy, you can see **edt_zcu111.bd** is instantiated.
+
+8. Select **Generate Block Design** from Flow Navigator -> IP INTEGRATOR.
+
+The Generate Output Products dialog box opens, as shown in the following figure.
+
+![](images/image8.png)
+
+
+
+
+
+
 
 
 

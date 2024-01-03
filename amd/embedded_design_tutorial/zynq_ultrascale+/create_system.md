@@ -188,7 +188,7 @@ For this example, we do not have programmable logic, so the pre-synthesis XSA is
 
 In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU102 board. You exported the hardware XSA file for future software development example projects.
 
-In the ![next chapter](build_software.md), you will learn how to develop software based on the hardware created in this example.
+In the [next chapter](build_software.md), you will learn how to develop software based on the hardware created in this example.
 
 
 

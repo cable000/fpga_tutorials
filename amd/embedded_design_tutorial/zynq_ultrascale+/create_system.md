@@ -99,7 +99,28 @@ The Run Block Automation view opens.
 
 This configuration wizard enables many peripherals in the Processing System with some multiplexed I/O (MIO) pins assigned to them according to the board layout of the ZCU102 board. For example, UART0 and UART1 are enabled. The UART signals are connected to a USB-UART connector through UART to the USB converter chip on the ZCU102 board.
 
+5. To verify, double-click the Zynq UltraScale+ Processing System block in the block diagram window.
 
+Note the check marks that appear next to each peripheral name in the Zynq UltraScale+ device block diagram, signifying the I/O Peripherals that are active.
+
+![](images/image5.png)
+
+6. In the block diagram, click one of the green I/O peripherals, as shown in the previous figure. The I/O Configuration view opens for the selected peripheral.
+
+![](images/image6.png)
+
+This page enables you to configure low speed and high speed peripherals. For this example, you will continue with the basic connection enabled using Board preset for ZCU102.
+
+7. In the Page Navigator, select **PS-PL Configuration.**
+8. In PS-PL Configuration, expand **PS-PL Interfaces** and expand the **Master Interface.**
+   
+The PS-PL AXI Master interface enables AXI HPM0 FPD and AXI HPM1 FPD in the default board setup. For this example, you start with a design with only PS logic (no PL), so the PS-PL interfaces can be disabled.
+
+9. Deselect **AXI HPM0 FPD** and **AXI HPM1 FPD**. The PS-PL configuration looks like the following figure.
+
+![](images/image7.png)
+
+10. Click *OK* to close the Re-customize IP wizard.
 
 
 

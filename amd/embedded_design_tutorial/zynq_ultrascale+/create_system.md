@@ -1,5 +1,5 @@
 
-# Zynq UltrScale+ Processing System Configuration with the Vivado Design Suite
+# Zynq UltraScale+ Processing System Configuration with the Vivado Design Suite
 
 This chapter demonstrates how to use the Vivado® Design Suite to develop an embedded system using the Zynq® UltraScale+™ MPSoC Processing System (PS).
 

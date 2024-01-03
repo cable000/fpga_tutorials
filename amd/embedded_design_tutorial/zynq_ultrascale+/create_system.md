@@ -148,7 +148,47 @@ The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wra
 The Generate Output Products dialog box opens, as shown in the following figure.
 
 ![](images/image8.png)
+Generate Output Products dialog
 
+**Note** If you are running the Vivado Design Suite on a Linux host machine, you might see additional options under Run Settings. In this case, continue with the default settings.
+
+9. Select Synthesis Options to Global and click Generate.
+
+This step generates all the required output products for the selected source. For example, constraints do not need to be manually created for the IP processor system. The Vivado tools automatically generate the XDC file for the processor subsystem when Generate Output Products is selected.
+
+If you select Out of Context Per IP, Vivado runs synthesis for each IP during the generation. This takes longer than the Global option.
+
+10. When the Generate Output Products process completes, click OK.
+
+11. In the Block Diagram Sources window, click the IP Sources tab. Here you can see the output products that you just generated, as shown in the following figure.
+    
+![](images/image9.png)
+Generated output products
+
+### Exporting Hardware
+
+To write a hardware platform using the GUI, follow these steps:
+
+1. Select **File→ Export → Export Hardware** in the Vivado Design Suite. The Export Hardware Platform window opens.
+2. Click **Next.**
+3. In the output window, select **Pre-synthesis** and click **Next.**
+4. Provide the **XSA file name** and **Export path**, then click **Next.**
+
+![](images/image10.png)
+Files window for Export Hardware
+
+5. Click Finish to generate the hardware platform file in the specified path. It will be the input file of next examples.
+
+**Note**
+The difference between the pre-synthesis XSA and the post-implementation XSA for embedded designs is whether the bitstream is included. If you are running applications in the Vitis IDE, you can configure the bitstream to hardware before running the application. If there is a bitstream in the XSA file, the Vitis IDE uses it by default. If a bitstream is not available, or if you wish to use another bitstream file, specify the bitstream path in the Vitis IDE.
+
+For this example, we do not have programmable logic, so the pre-synthesis XSA is used.
+
+### Example Summary
+
+In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU102 board. You exported the hardware XSA file for future software development example projects.
+
+In the ![next chapter](todo), you will learn how to develop software based on the hardware created in this example.
 
 
 

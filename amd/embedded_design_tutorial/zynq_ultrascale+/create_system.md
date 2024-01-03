@@ -83,7 +83,7 @@ Now that you have added the processing system for the Zynq MPSoC to the design, 
 
 The Re-customize IP view opens, as shown in the following figure. Notice that by default, the processor system does not have any peripherals connected.
 
-![](images/image3.jpg)
+![](images/image3.jpeg)
 
 
 

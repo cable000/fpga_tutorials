@@ -45,5 +45,6 @@ The following steps show how to create a platform project with a standalone doma
 2. Select the workspace C\edt\edt_zcu102_workspace and continue.
 
 ![](images/two/image1.png)
+
 Vitis IDE Launcher
 

@@ -68,7 +68,24 @@ Vitis IDE Launcher
 | Architecture                     | 64-bit                       |
 | Generate Boot Components         | Keep it checked              |
 | Target processor to create FSBL  | psu_cortexa53_0              |
-   
+
+8. Click **Finish.**
+9. In a few minutes, the Vitis IDE generates the platform. The files that are generated are displayed in the explorer window as shown in the following figure.
+
+![](images/two/image3.png)
+
+- There is a standalone domain in the platform under psu_cortexa53_0 processor. New applications for Cortex-A53 can link against it.
+- Default domains for FSBL and PMU firmware come with the platform project when **Generate Boot Components** is selected during application or platform project creation.
+- You are free to add and remove domains in the platform project.
+- You can customize the domain configurations.
+
+Build the hardware by right-clicking the platform, then selecting **Build Project.**
+
+![](images/two/image4.jpeg)
+
+The platform project is ready. You can create applications using this platform and test on zcu102 hardware.
+
+**Note** The project build process builds the standalone BSP, FSBL, and PMUFW. FSBL and PMUFW have their own BSP. The build process takes some time.
 
 
 

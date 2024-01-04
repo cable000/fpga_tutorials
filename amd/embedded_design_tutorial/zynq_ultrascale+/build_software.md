@@ -292,7 +292,7 @@ Because the “Hello World” applications for Cortex-A53 and Cortex-R5F are ide
 
 If you view the XSCT console, it shows the XSCT command history as shown in the following example:
 
-`
+```
 Downloading Program -- C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
 section, .vectors: 0x00000000 - 0x00000637
 section, .text: 0x00100000 - 0x00101947
@@ -315,7 +315,8 @@ section, .stack: 0x00104570 - 0x00107d6f
 
 Setting PC to Program Start Address 0x0000003c
 Successfully downloaded C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
-`
+```
+
 More debugging techniques are explored in the ![next chapter]().
 
 **Note**

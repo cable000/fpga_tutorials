@@ -139,7 +139,7 @@ In the above example, use COM5 for Interface-0 and baud rate 115200.
 
 5. Keep the other settings as-is and click **OK** to connect. The connection status is shown in the Vitis Serial Terminal window.
 
-![](images/two/image9.png)
+![](images/two/image10.png)
 
 ### Creating a Hello World Application on Arm Cortex-A53
 

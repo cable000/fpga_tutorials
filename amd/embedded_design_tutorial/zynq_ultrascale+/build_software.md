@@ -218,6 +218,114 @@ To reset the BSP source, double-click **platform.prj**, select a BSP in a domain
 ### Standalone BSP
 Standalone is a simple, low-level software layer. It provides access to basic processor features such as caches, interrupts, and exceptions, as well as the basic processor features of a hosted environment. These basic features include standard input/output, profiling, abort, and exit. It is a single-threaded semi-hosted environment.
 
+## Example 4: Running the “Hello World” Application from Arm Cortex-R5
+
+In this example, you will learn how to run a simple “Hello World” software application for the Arm Cortex-R5F processor in the JTAG mode using System Debugger in the Vitis IDE.
+
+The application for Cortex-R5F needs a domain for cortexr5_0. You will create it in the zcu102_edt platform and reuse it for the new application. You will create the Cortex-R5F application with the updated zcu102_edt platform.
+
+The hardware setup and serial console connection is the same as in Example 2.
+
+### Input and Output Files
+- Input: zcu111_edt platform with standalone domain on Arm Cortex-A53
+- Output: zcu111_edt platform with standalone domain on Arm Cortex-A53 and Cortex-R5F processors
+
+### Creating a Standalone BSP Domain for cortexr5_0
+
+In this step, you will prepare for the next example design: running a “Hello World” application on Arm Cortex-R5. The first step is to create a standalone BSP domain for cortexr5_0 by performing the following steps:
+
+1. Double-click **platform.spr**. The platform opens in the Explorer view.
+2. Click in the top-right corner to add a domain Add Icon.
+3. Create a domain with the following settings:
+
+| **System Properties**            | **Setting or Command to Use**|
+|----------------------------------| -----------------------------|
+| Name                             | standalone_r5                |
+| Display name                     | standalone_r5                |
+| OS                               | Standalone                   |
+| Version                          | Standalone (7.3)             |
+| Processor                        | psu_cortexr5_0               |
+| Supported Runtime                | C/C++                        |
+| Architecture                     | 32-bit                       |
+
+4. The Vitis IDE creates a new domain and **standalone_r5** appears under the **zcu111_edt** platform.
+
+### What Just Happened?
+
+The edt_zcu102_wrapper platform is, by default, assigned the default domain for psu_cortexa53_0. You created a new domain for cortexr5_0 in this platform..
+
+### Creating a “Hello World” Application on Arm Cortex-R5F
+
+1. Select **File → New → Application Project**. The Create New Application Project wizard welcome screen opens.
+2. Click **Next**.
+3. Use the information in the table below to make your selections in the wizard screens.
+
+| **Screen**                  | **System Properties**            | **Settings                     |
+|-----------------------------| ---------------------------------|--------------------------------|
+| Platform                    | Select platform from repository  | zcu111_edt                     |
+| Application project details | Application project name         | hello_r5                       |
+|                             | System project name              | hello_r5_system                |
+|                             | Target processor                 | psu_cortexr5_0                 |
+| Domain                      | Domain                           | standalone_r5                  |
+| Templates                   | Available templates              | Hello World                    |       
+
+The Vitis IDE creates the **hello_r5_system** project in the Explorer view. **hello_r5** sits inside **hello_r5_system**.
+
+4. Select **hello_r5_system** and click the hammer icon in the toolbar to build the system project.
+
+### Running the “Hello World” Application on Arm Cortex-R5F
+
+1. Right-click **hello_r5** and select **Run as → Run Configurations**.
+
+2. Right-click **Xilinx Application Debugger** and click **New Configuration**.
+The Vitis IDE creates the new run configuration, named Debugger_hello_r5-Default. The configurations associated with the application are pre-populated in the Main page of the launch configurations.
+
+3. Click the **Target Setup** page and review the settings.
+This file is exported when you create the platform using the Vitis IDE; it contains the initialization information for the processing system.
+
+4. Click **Run**.
+“Hello World” appears on the serial communication utility in Terminal 1, as shown in the following figure.
+
+![](images/two/image11.png)
+
+Because the “Hello World” applications for Cortex-A53 and Cortex-R5F are identical, they cannot be differentiated based on the print contents, but you can view the details in the **Debug Perspective**.
+
+If you view the XSCT console, it shows the XSCT command history as shown in the following example:
+
+`
+Downloading Program -- C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
+section, .vectors: 0x00000000 - 0x00000637
+section, .text: 0x00100000 - 0x00101947
+section, .init: 0x00101948 - 0x00101953
+section, .fini: 0x00101954 - 0x0010195f
+section, .note.gnu.build-id: 0x00101960 - 0x00101983
+section, .rodata: 0x00101988 - 0x00101f3c
+section, .data: 0x00101f40 - 0x001023af
+section, .bootdata: 0x001023b0 - 0x0010252f
+section, .eh_frame: 0x00102530 - 0x00102533
+section, .ARM.exidx: 0x00102534 - 0x0010253b
+section, .init_array: 0x0010253c - 0x0010253f
+section, .fini_array: 0x00102540 - 0x00102543
+section, .bss: 0x00102544 - 0x0010256b
+section, .heap: 0x0010256c - 0x0010456f
+section, .stack: 0x00104570 - 0x00107d6f
+
+0%    0MB   0.0MB/s  ??:?? ETA
+100%    0MB   0.2MB/s  00:00
+
+Setting PC to Program Start Address 0x0000003c
+Successfully downloaded C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
+`
+More debugging techniques are explored in the ![next chapter]().
+
+**Note**
+No bitstream download is required for the above software application to be executed on the Zynq UltraScale+ evaluation board. The Arm Cortex-R5F dual core is already present on the board. Basic initialization of this system to run a simple application is accomplished by the FSBL application.
+
+
+
+
+
+
 
 
 

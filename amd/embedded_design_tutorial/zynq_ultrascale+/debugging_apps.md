@@ -149,9 +149,10 @@ The command targets now lists the targets and also shows the selected target hig
 XSCT - selected target
 
 5. The processor is now held in reset. To clear the processor reset, use the following command:
+   
 `rst -processor`
 
-6. Load the FSBL on Cortex-A53 #0. FSBL initializes the Zynq UltraScale+ processing system.
+7. Load the FSBL on Cortex-A53 #0. FSBL initializes the Zynq UltraScale+ processing system.
 ```
 xsct% dow {C:\edt\fsbl_a53\Debug\fsbl_a53.elf}
 xsct% con
@@ -161,7 +162,81 @@ xsct% stop
 **Note**
 The {} used in the above command are required on Windows machines to enable backward slashes () in file paths. These brackets can be avoided by using forward “/” in paths. For Linux paths, use forward slashes; the paths in XSCT in Linux can work as-is, without any brackets.
 
+## Loading the Application Using XSCT
 
+1. Check and select the RPU Cortex-R5F Core 0 target ID.
+```
+xsct% targets
+xsct% targets -set -filter {name =~ "Cortex-R5 #0"}
+xsct% rst -processor
+```
+The command **rst -processor** clears the reset on an individual processor core.
+
+This step is important, because when the Zynq MPSoC boots up JTAG boot mode, all the Cortex-A53 and Cortex-R5F cores are held in reset. You must clear the resets on each core before debugging on these cores. The **rst** command in XSDB can be used to clear the resets.
+**Note**
+The command rst -cores clears resets on all the processor cores in the group (such as APU or RPU), of which the current target is a child. For example, when A53 #0 is the current target, rst - cores clears resets on all the Cortex-A53 cores in the APU.
+
+2. Download the testapp_r5 application on Arm Cortex-R5F Core 0.
+
+- Run xsct% dow {C:edttestapp_r5Debugtestapp_r5.elf} or xsct% dow {C:/edt/testapp_r5/Debug/testapp_r5.elf}.
+
+At this point, you can see the sections from the ELF file downloaded sequentially. The XSCT prompt can be seen after successful download. Now, configure a serial terminal (Tera Term, Minicom, or the serial terminal interface for a UART-1 USB-serial connection).
+
+## Serial Terminal Configuration
+
+1. Start a terminal session using Tera Term or Minicom depending on the host machine being used. Set the COM port and baud rate as shown in following figure.
+
+![](images/debugging_apps/image7.png)
+
+2. For port settings, verify the COM port in the device manager. There are four USB UART interfaces exposed by the ZCU102 board. Select the COM port associated with the interface with the lowest number. In this case, for UART-0, select the COM port with interface-0.
+3. Similarly, for UART-1, select the COM port with interface-1. Remember that the R5 BSP has been configured to use UART-1, so R5 application messages will appear on the COM port with the UART-1 terminal.
+
+## Running and Debugging the Application Using XSCT
+
+1. Before you run the application, set a breakpoint at main():
+
+`xsct% bpadd -addr &main`
+
+This command returns the breakpoint ID. You can verify the breakpoints planted using the command **bplist**. For more details on breakpoints in XSCT, type **help breakpoint** in the XSCT console.
+
+2. Resume the processor core:
+
+`xsct% con`
+
+The following informative messages will be displayed when the core hits the breakpoint.
+
+`xsct% Info: Cortex-R5 \#0 (target 7) Stopped at 0x10021C (Breakpoint)`
+
+3. At this point, you can view registers when the core is stopped:
+
+`xsct% rrd`
+
+4. View local variables:
+
+`xsct% locals`
+
+5. Step over a line of the source code and view the stack trace:
+
+```
+xsct% nxt
+Info: Cortex-R5 #0 (target 6) Stopped at 0x100490 (Step)
+xsct% bt
+```
+You can use the **help** command to find other options:
+
+![](images/debugging_apps/image8.png)
+
+You can use the help running command to get a list of possible options for running or debugging an application using XSCT.
+
+![](images/debugging_apps/image9.png)
+
+6. You can now run the code
+
+`xsct% con`
+
+At this point, you can see the Cortex-R5F application print a message on the UART-1 terminal.
+
+The next chapter shows how to build and debug Linux applications.
 
 
 

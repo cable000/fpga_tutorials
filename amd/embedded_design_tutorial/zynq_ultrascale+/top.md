@@ -13,7 +13,7 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 
 [Debugging Standalone Applications](debugging_apps.md) with the Vitis Debugger provides an introduction to debugging software using the debug features of the Vitis IDE. This chapter uses the previous design and runs the software bare metal (without an OS) to demonstrate the debugging process. This chapter also lists the debug configurations for Zynq UltraScale+ MPSoC.
 
-Building and Debugging Linux Applications creates a Linux image with PetaLinux and creates a “Hello World” Linux application with the Vitis IDE. It also shows how to debug Linux applications with the Vitis IDE.
+[Building and Debugging Linux Applications](linux_apps.md) creates a Linux image with PetaLinux and creates a “Hello World” Linux application with the Vitis IDE. It also shows how to debug Linux applications with the Vitis IDE.
 
 System Design Example: Using GPIO, Timer and Interrupts adds some IPs in the PL. It demonstrates how you can use the software blocks you configured in previous chapters to create a complex Zynq UltraScale+ system.
 

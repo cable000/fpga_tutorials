@@ -62,6 +62,12 @@ If the Confirm Perspective Switch popup window appears, click Yes. The Debug per
 If the Debug perspective window does not open automatically, select **Window→ Perspective → Open Perspective → Other**, then select **Debug** in the Open Perspective wizard. You can quickly switch between Design Perspective and Debug Perspective with buttons on upper right corner.
 
 ![](images/debugging_apps/image3.png)
+
+Switch between Vitis Perspectives
+
+The Debug Perspective looks like this:
+
+
 ![](images/debugging_apps/image4.jpeg)
 
 **Note**

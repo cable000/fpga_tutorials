@@ -115,5 +115,56 @@ The following steps indicate how to load a bare-metal application on R5 using XS
 
 ### Setting Up the Target
 
+1. Open the XSCT console:
+
+- Click the XSCT Console button image1 in the toolbar.
+- Alternatively, you can open the XSCT console from Xilinx → XSCT Console.
+
+2. Connect to the target over JTAG:
+
+- In the XSCT console, run xsct% connect.
+
+The connect command returns the channel ID of the connection.
+
+3. Command Targets lists the available targets and allows you to select a target through its ID. The targets are assigned IDs as they are discovered on the JTAG chain, so the target IDs can change from session to session.
+
+For non-interactive usage such as scripting, the -filter option can be used to select a target instead of selecting the target through its ID:
+
+`xsct% targets`
+
+The targets are listed as shown in the following figure.
+
+![](images/debugging_apps/image5.png)
+
+XSCT - targets
+
+4. Select the PSU target. The Arm APU and RPU clusters are grouped under PSU. Select Cortex-A53#0 as the target using the following command:
+
+`xsct% targets -set -filter {name =\~ \"Cortex-A53 \#0\"}`
+
+The command targets now lists the targets and also shows the selected target highlighted with an asterisk (*) mark. You can also use the target number to select a target, as shown in the following figure.
+
+![](images/debugging_apps/image6.png)
+
+XSCT - selected target
+
+5. The processor is now held in reset. To clear the processor reset, use the following command:
+`rst -processor`
+
+6. Load the FSBL on Cortex-A53 #0. FSBL initializes the Zynq UltraScale+ processing system.
+```
+xsct% dow {C:\edt\fsbl_a53\Debug\fsbl_a53.elf}
+xsct% con
+xsct% stop
+```
+
+**Note**
+The {} used in the above command are required on Windows machines to enable backward slashes () in file paths. These brackets can be avoided by using forward “/” in paths. For Linux paths, use forward slashes; the paths in XSCT in Linux can work as-is, without any brackets.
+
+
+
+
+
+
 
 

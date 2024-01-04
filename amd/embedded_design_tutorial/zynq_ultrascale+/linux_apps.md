@@ -11,7 +11,7 @@ In this example, you will configure and build a Linux operating system platform 
 
 - Input:
   - Hardware XSA (edt_zcu102_wrapper.xsa generated in Example 1)
-  - ZCU102 PetaLinux BSP
+  - [ZCU102 PetaLinux BSP](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html)
 - Output:
   - PetaLinux boot images (BOOT.BIN, image.ub)
   - PetaLinux application (hello_linux)

@@ -119,7 +119,7 @@ You can use any serial communication utility in your system. The Vitis IDE provi
 
 2. Click the + button to set the serial configuration.
 
-![](images/two/image6.jpeg)
+![](images/two/image6.png)
 
 Vitis Terminal Window
 
@@ -127,7 +127,7 @@ Vitis Terminal Window
 
 MPSoC UART-0 corresponds to the COM port with Interface-0. Windows Device Manager provides mapping between Interface-x and COM-x.
 
-![](images/two/image7.jpeg)
+![](images/two/image7.png)
 
 Windows Device Manager
 
@@ -135,11 +135,11 @@ In the above example, use COM5 for Interface-0 and baud rate 115200.
 
 4. From the Port dropdown menu, select the port number for Interface-0 (COM5 in this example).
 
-![](images/two/image8.jpeg)
+![](images/two/image8.png)
 
 5. Keep the other settings as-is and click **OK** to connect. The connection status is shown in the Vitis Serial Terminal window.
 
-![](images/two/image10.png)
+![](images/two/image9.png)
 
 ### Creating a Hello World Application on Arm Cortex-A53
 

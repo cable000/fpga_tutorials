@@ -20,3 +20,5 @@ The Vitis debugger supports debugging through Xilinx® System Debugger.
 The Xilinx System Debugger uses the Xilinx hardware server as the underlying debug engine. The Vitis IDE translates each user interface action into a sequence of Target Communication Framework (TCF) commands. It then processes the output from System Debugger to display the current state of the program being debugged. It communicates to the processor on the hardware using Xilinx hardware server.
 
 The debug workflow is described in the following figure.
+
+![](images/debugging_apps/image1.png)

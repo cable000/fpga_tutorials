@@ -107,7 +107,7 @@ ZCU111 Board Connection Guide
 3. Connect a USB micro cable to connector J83 on the target board with the Windows host machine. This is used for USB to serial transfer.
 4. Ensure that the SW6 Switch on the bottom right is set to **JTAG boot mode** as shown in the following figure.
 
-![](images/two/image5.jpeg)
+![](images/two/image6.jpeg)
 
 5. Power on the ZCU111 board.
 

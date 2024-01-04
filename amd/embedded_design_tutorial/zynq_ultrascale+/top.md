@@ -11,7 +11,7 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 
 [Building Software for PS Subsystems](build_software.md) describes the steps to configure and build software for processing blocks in the processing system, including the application processing unit (APU) and real-time processing unit (RPU). It also covers the creation of bare-metal applications targeting the APU and RPU and how to conduct a review of the boot components in a hardware platform.
 
-Debugging Standalone Applications with the Vitis Debugger provides an introduction to debugging software using the debug features of the Vitis IDE. This chapter uses the previous design and runs the software bare metal (without an OS) to demonstrate the debugging process. This chapter also lists the debug configurations for Zynq UltraScale+ MPSoC.
+[Debugging Standalone Applications](debugging_apps.md) with the Vitis Debugger provides an introduction to debugging software using the debug features of the Vitis IDE. This chapter uses the previous design and runs the software bare metal (without an OS) to demonstrate the debugging process. This chapter also lists the debug configurations for Zynq UltraScale+ MPSoC.
 
 Building and Debugging Linux Applications creates a Linux image with PetaLinux and creates a “Hello World” Linux application with the Vitis IDE. It also shows how to debug Linux applications with the Vitis IDE.
 

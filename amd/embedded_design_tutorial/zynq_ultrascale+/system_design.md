@@ -38,7 +38,7 @@ The first step in this design is to configure the PS and PL sections. This can b
   1. Right-click in the block diagram and select Add IP from the IP catalog.
   2. In the catalog, select AXI Timer. The IP Details information displays, as shown in the following figure.
 
-![](images/system_design/image3.png)
+![](images/system_design/image3.jpeg)
 
   3. Double-click the AXI Timer IP to add it to the design.
 
@@ -317,7 +317,7 @@ This application makes use of pthreads from the pthread library. Add the pthread
   1. Right-click **ps_pl_linux_app**, and click **C/C++ Build Settings**.
   2. Refer to the following figures to add the pthread library.
 
-![](images/system_design/image14.png)
+![](images/system_design/image14.jpeg)
 
 ![](images/system_design/image15.png)
 

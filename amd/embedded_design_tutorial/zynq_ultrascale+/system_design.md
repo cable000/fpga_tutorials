@@ -77,4 +77,67 @@ The first step in this design is to configure the PS and PL sections. This can b
 
 ![](images/system_design/image6.png)
 
+## Connecting IP Blocks to Create a Complete System
+
+The next step is to connect the IP blocks instantiated above to the PS block.
+
+- Use PS HPM LPD AXI to control the AXI interface of the GPIO and timer.
+- Connect interrupt signals.
+
+1. Enable the PS AXI HPM LPD AXI interface:
+
+  1. Double-click the **Zynq UltraScale+ MPSoC** IP block.
+  2. Select the **PS-PL Configuration** tab.
+  3. Enable **AXI HPM0 LPD**, expand it, and set the AXI HPM0 LPD Data Width drop-down to **32** bits.
+  4. Click **OK** to close the window.
+  5. Check that the M_AXI_HPM0_LPD interface shows up on the MPSoC block.
+
+![](images/system_design/image7.png)
+
+AXI HPM LPD
+
+**Note**
+32-bit AXI is useful for accessing the control registers of general IPs. 128-bit AXI is useful for data transfer.
+
+2. Connect the AXI interfaces:
+
+  1. Click **Run Connection Automation**.
+  2. Check **All Automation**.
+  3. Go through each tab to review the planning connections.
+  4. Click **OK** to execute the automated connection.
+  5. Check the connection result.
+
+![](images/system_design/image8.png)
+
+Vivado Connection Automation Result
+
+3. Connect the interrupt signals:
+
+  1. Connect axi_timer_0.interrupt to zynq_ultra_ps_e_0.pl_ps_irq0[0:0].
+  2. The AXI GPIO interrupt mode will not be used.
+  3. Review the final block diagram.
+
+![](images/system_design/image9.png)
+
+Final Block Diagram
+
+**Note**
+If you have multiple interrupt signals to connect to the PS, you can concatenate them to a bus with a concat block. You can add concat from **Add IP**.
+
+4. Verify the address settings of IP cores:
+
+In the Address Editor view, verify that the corresponding IPs are assigned addresses during connection automation. If they are not assigned, click the **Assign All** button to assign addresses for them.
+
+![](images/system_design/image10.png)
+
+**Note**
+Connection automation assigns addresses automatically. If you connect IP manually, you also need to assign its address.
+
+
+
+
+
+
+
+
 

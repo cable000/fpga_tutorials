@@ -550,6 +550,226 @@ A few changes are required in FSBL to enable USB boot mode. USB boot mode suppor
 1. In the Vitis IDE, select **File → New → Application Project** to open the New Project wizard.
 2. Use the information in the table below to make your selections in the wizard.
 
+| **Screen**                  | **System Properties**                | **Settings**                   |
+|-----------------------------| -------------------------------------|--------------------------------|
+| Platform                    | Select platform from repository      | edt_zcu102_wrapper             |
+| Application project details | Application project name             | fsbl_usb_boot                  |
+|                             | System project name                  | fsbl_usb_boot_system           |
+|                             | Target processor                     | psu_cortexa53_0                |
+| Domain                      | Domain                               | standalone on psu_cortexa53_0  |                
+| Templates                   | Available templates                  | Zynq MP FSBL                   |    
+
+
+3. Click **Finish**.
+4. In the Explorer view, expand the **fsbl_usb_boot** project and open **xfsbl_config.h** from **fsbl_usb_boot→ src→xfsbl_config.h**.
+5. In **xfsbl_config.h** change or set following settings:
+
+```
+#define FSBL_QSPI_EXCLUDE_VAL (1U)
+#define FSBL_SD_EXCLUDE_VAL (1U)
+#define FSBL_USB_EXCLUDE_VAL (0U)
+```
+
+6. Press **Ctrl+S** to save these changes.
+7. Build FSBL (**fsbl_usb_boot**).
+
+### Creating Boot Images for USB Boot
+
+In this section, you will create the boot images to be loaded through a USB using the DFU utility. Device firmware upgrade (DFU) is intended to download and upload firmware to/from devices connected over USB. In this boot mode, the boot loader (FSBL) and the PMU firmware which are loaded by bootROM are copied to Zynq UltraScale+ on-chip memory (OCM) from the host machine USB port using the DFU utility. The size of the OCM (256 KB) limits the size of the boot image downloaded by bootROM in USB boot mode. Considering this, and subject to the size requirement being met, only FSBL and PMU firmware are stitched into the first boot.bin, which is copied to the OCM. The remaining boot partitions will be stitched in another boot image and copied to DDR to be loaded by the FSBL which is already loaded and running at this stage. Follow these steps to create boot images for this boot mode.
+
+1. In the Vitis IDE, select **Xilinx → Create Boot Image**.
+2. Select **fsbl_usb_boot.elf** and **pmufw.elf** partitions and set them as shown in the following figure.
+
+![](images/boot_config/image29.png)
+
+3. Ensure that the PMU partition is set to be loaded by bootROM.
+4. Click **Create Image** to generate **BOOT.bin**.
+
+
+## Modifying PetaLinux U-Boot
+
+Modify PetaLinux U-Boot so that it can load the **image.ub** image. The device tree needs to be modified to set the USB in peripheral mode. The default PetaLinux configuration is set for the USB in host mode. Follow these steps to modify **system-user.dtsi** in the PetaLinux project:
+
+`<PetaLinux-project>/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi`
+
+1. Add the following to the **system-user.dtsi** file so that it looks like this:
+
+```
+/include/ "system-conf.dtsi"
+/ {
+gpio-keys { sw19 {
+status = "disabled";
+};
+};
+};
+&uart1
+{
+status = "disabled";
+};
+&dwc3_0 {
+dr_mode = "peripheral"; maximum-speed = "super-speed";
+};
+```
+
+The modified **system-user.dtsi** file can be found in ref_files/usb_boot released with this tutorial.
+
+2. Build PetaLinux with the following changes:
+$ petalinux-build`
+
+The following steps describe how to create a **usb_boot.bin** comprising rest of the partitions.
+
+**Note**
+Copy the newly generated U-Boot to **C:\edt\usb_boot\.**
+
+1. In the Vitis IDE, select **Xilinx → Create Boot Image**.
+2. Select **FSBL** and rest of the partitions and set them as shown in the following figure. You can also choose to import the BIF file from the SD boot sequence.
+
+![](images/boot_config/image30.png)
+
+**Note**
+Ensure that you have set the correct exception levels for the TF-A (EL-3, TrustZone) and U-Boot (EL-2) partitions. These settings can be ignored for other partitions.
+
+The PMU firmware partition is not required in this image because it will be loaded by the bootROM before this image **(**usb_boot.bin**) is loaded.
+
+3. Click on **Create Image** to generate usb_boot.bin.
+
+**Note**
+In addition to **BOOT.bin** and **usb_boot.bin**, a Linux image such as **image.ub** is required to boot Linux. This **image.ub** is loaded by the DFU utility separately.
+
+## Boot Using USB Boot
+
+In this section you will load the boot images on the ZCU102 target using the DFU utility. Before you start, set the board connections as shown below:
+
+Set ZCU102 for USB boot mode by setting SW6 (1-OFF, 2-OFF, 3-OFF, and 4-ON), as shown below:
+
+![](images/boot_config/image31.png)
+
+2. Connect a USB 3.0 cable to a J96 USB 3 ULPI connector. Connect other end of the cable to a USB port on the host machine.
+3. Connect a USB micro cable between the USB-UART port on the board (J83) and the host machine.
+4. Start a terminal session, using Tera Term or Minicom depending on the host machine being used, as well as the COM port and baud rate for your system.
+5. Power on the board.
+
+The following steps load the boot images via USB using the DFU utility, which can be found at **Vitis\2021.2\tps\lnx64\dfu-util-0.9.**
+
+Alternatively, you can install the DFU utility on Linux using the Package Manager supported by Linux Distribution.
+
+
+## Boot Commands for Linux Host Machine
+
+1. Check if the DFU can detect the USB target.
+
+`$ sudo dfu-util -l`
+
+The USB device should be enumerated with the vendor and product ID (**03fd:0050**). You should see something like the following message:
+
+`Found DFU: [03fd:0050] ver=0100, devnum=30, cfg=1, intf=0, alt=0, name="Xilinx DFU Downloader", serial="2A49876D9CC1AA4"`
+
+**Note**
+If you do not see the “Found DFU” message, verify the connection and retry.
+
+2. Download the BOOT.bin that was created in Creating Boot Images for USB Boot.
+
+`$ sudo dfu-util -d 03fd:0050 -D <USB_Boot_Image_Path>/Boot.bin`
+
+Verify from the Serial Terminal if FSBL has loaded successfully.
+
+3. Download the **usb_boot.bin**. Before this, start another terminal session for the UART-1 serial console.
+
+`$ sudo dfu-util -d 03fd:0050 -D <USB_Boot_Image_Path>/usb_boot.bin`
+
+Check the UART 0 terminal and wait until U-Boot loads.
+
+4. On the U-Boot prompt, press **Enter** to terminate autoboot. Verify from the UART1 console that the R5 application has also loaded successfully.
+5. Run the following commands to set up the DFU environment in the U-Boot command line:
+
+```
+$ setenv loadaddr 0x10000000
+$ setenv kernel_addr 0x10000000
+$ setenv kernel_size 0x1e00000
+$ setenv dfu_ram_info "setenv dfu_alt_info image.ub ram $kernel_addr
+$kernel_size"
+```
+
+6. In the U-Boot console, start DFU_RAM to enable downloading Linux images:
+
+`U-boot\ run dfu_ram`
+
+7. Download the Linux image (**image.ub**) using the following command from the host machine terminal:
+
+`$ sudo dfu-util -d 03fd:0300 -D <PetaLinux_project>/images/linux/image.ub -a 0`
+
+8. Execute **Ctrl+C** on the U-Boot console to stop dfu_ram.
+9. Run the **bootm** command from the U-Boot console.
+
+`U-boot\ bootm`
+
+`0. Verify that Linux loads successfully on the target.
+
+**Note**
+In this example, **image.ub** is copied to the DDR location based on the **#define DFU_ALT_INFO_RAM** settings in U-Boot configuration. These settings can be modified to copy other image files to the DDR location. Then, if required, these images can be copied to QSPI using U-Boot commands listed in Boot Sequence for QSPI-Boot Mode Using JTAG.
+
+## Boot Commands for Windows Host Machine
+
+1. In the Vitis IDE, select **Xilinx → Launch Shell**.
+2. In the shell, verify if the DFU can detect the USB target:
+
+`dfu-util.exe -l`
+
+**Note**
+**dfu-util.exe** can be found in **<VITIS_Installation_path>\VITIS\2021.2\tps\Win64\dfu-util-0.9\dfu-util.exe.**
+
+3. The USB device should be enumerated with the vendor and product ID (**03fd:0050**).
+
+**Note**
+If you do not see the message starting with “Found DFU…”, download and install the Zadig software. Open the software and click **Options** and select **List all devices**. Select device **Xilinx Dfu Downloader** and click **Install driver**.
+
+4. Download the **boot.bin** that was created in Creating Boot Images for USB Boot.
+
+`$ dfu-util.exe -d 03fd:0050 -D BOOT.bin`
+
+5. Verify from the Serial Terminal (UART 0) that FSBL is loaded successfully.
+6. Download the **usb_boot.bin**. Before this, start another terminal session for the UART-1 serial console.
+
+`$ dfu-util.exe -d 03fd:0050 -D usb_boot.bin```
+
+7. On the U-Boot prompt, press **Enter** to terminate auto-boot. Verify from the UART1 console that the R5 application has also loaded successfully.
+
+**Note**
+At this point, use the Zadig utility to install drivers for the “USB download gadget” with device ID 03fd:0300. Without this, the Zadig software does not show “Xilinx DFU Downloader” after booting U-Boot on the target.
+
+8. Run the following commands to set up the DFU environment in the U-Boot command line:
+```
+$ setenv loadaddr 0x10000000
+$ setenv kernel_addr 0x10000000
+$ setenv kernel_size 0x1e00000
+$ setenv dfu_ram_info "setenv dfu_alt_info image.ub ram $kernel_addr $kernel_size"
+```
+
+9. In the U-Boot console, start DFU_RAM to enable downloading Linux images:
+
+`U-boot\ run dfu_ram`
+
+10. Download the Linux image **image.ub** using the following command from the host machine terminal:
+
+`$ dfu-util.exe -d 03fd:0300 -D image.ub -a 0`
+
+11. Run the **bootm** command from the U-Boot console.
+
+`U-boot\ bootm`
+
+12. Verify that Linux loads successfully on the target.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

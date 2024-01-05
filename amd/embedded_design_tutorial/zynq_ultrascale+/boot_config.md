@@ -92,6 +92,97 @@ Now that all the individual images are ready, create the boot image to load all 
 
 ![](images/boot_config/image1.png)
 
+3. Add the FSBL partition:
+
+  1. In the Create Boot Image wizard, click **Add** to open the Add Partition view.
+  2. In the Add Partition view, click **Browse** to select the FSBL executable.
+  3. For FSBL, ensure that the partition type is selected as boot loader and the correct destination CPU is selected by the tool. The tool is configured to make this selection based on the FSBL executable.
+
+**Note**
+Ignore the Exception Level drop down, because FSBL is set to EL3 by default. Also, leave the TrustZone setting unselected for this example.
+
+![](images/boot_config/image2.png)
+
+  4. Click OK to select FSBL and go back to Create Boot Image wizard.
+
+4. Add the PMU and TF-A firmware partitions:
+
+  1. Click Add to open the Add Partition view, shown in the following figure.
+
+![](images/boot_config/image3.png)
+
+  2. Add the PMU firmware partition.
+  3. Browse to and select the **PMU Firmware executable**.
+  4. For this partition, select **pmu** as the partition type.
+  5. Leave the Exception Level and TrustZone settings unselected.
+  6. Click **OK**.
+  7. Click **Add** to open the Add Partition view.
+  8. Add the TF-A firmware **bl31.elf** partition.
+
+**Note**
+TF-A Firmware (**bl31.elf**) can be found in **<PetaLinux Project>/image/linux/**.
+
+  1. For this partition, select **datafile** as the partition type.
+  2. Set the Destination Device as **PS**.
+  3. Set the Destination CPU as **A53 0**.
+  4. Set the Exception Level to EL3 and select **Enable TrustZone**.
+
+![](images/boot_config/image4.png)
+
+  9. Click **OK.**
+
+5. Add the R5 executable and enable it in lockstep mode.
+
+  1. Click Add to add the Cortex-R5F bare-metal executable.
+
+  ![](images/boot_config/image5.png)
+
+  2. Set the Destination Device as **PS**.
+  3. Set the Destination CPU as **R5 Lockstep**. This sets the RPU R5 cores to run in lockstep mode.
+  4. Leave Exception Level and TrustZone unselected.
+  5. Click **OK**.
+
+6. Now, add the U-Boot partition. You can find **u-boot.elf** for sd_boot mode in **<PetaLinux_project>/images/linux/sd_boot**.
+
+  1. Click **Add** to add the u-boot.elf partition.
+  2. For U-Boot, select the Destination Device as **PS**.
+  3. Select the Destination CPU as **A53 0**.
+  4. Set the Exception Level to **EL2**
+
+  ![](images/boot_config/image6.png)
+
+  5. Click **OK** to return to the Create Boot Image wizard.
+  6. Click **Create Image** to close the wizard and create the boot image.
+
+You can also create **BOOT.bin** images using the BIF attributes and the Bootgen command. For this configuration, the BIF file contains the following attributes:
+
+```
+//arch = zynqmp; split = false; format = BIN
+the_ROM_image:
+{
+[bootloader, destination_cpu = a53-0]C:\edt\fsbl_a53\Debug\fsbl_a53.elf
+[pmufw_image]C:\edt\edt_zcu102_wrapper\export\edt_zcu102_wrapper\sw\edt_zcu102_wrapper\boot\pmufw.elf
+[destination_cpu = a53-0, exception_level = el-3, trustzone]C:\edt\sd_boot\bl31.elf
+[destination_cpu = r5-lockstep]C:\edt\testapp_r5\Debug\testapp_r5.elf
+[destination_cpu = a53-0, exception_level = el-2]C:\edt\sd_boot\u-boot.elf
+}
+```
+The Vitis IDE calls the following Bootgen command to generate the BOOT.bin image for this configuration:
+
+`bootgen -image sd_boot.bif -arch zynqmp -o C:\edt\sd_boot\BOOT.bin`
+
+
+
+
+
+
+
+
+  
+
+
+  
+
 
 
 

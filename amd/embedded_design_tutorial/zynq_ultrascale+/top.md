@@ -17,6 +17,6 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 
 [System Design Example: Using GPIO, Timer and Interrupts](system_design.md) adds some IPs in the PL. It demonstrates how you can use the software blocks you configured in previous chapters to create a complex Zynq UltraScale+ system.
 
-Boot and Configuration shows the integration of components to configure and create boot images for a Zynq UltraScale+ system. The purpose of this chapter is to understand how to integrate and load boot loaders.
+[Boot and Configuration](boot_config.md) shows the integration of components to configure and create boot images for a Zynq UltraScale+ system. The purpose of this chapter is to understand how to integrate and load boot loaders.
 
 Secure Boot is an optional chapter that introduces the steps to build the Hardware Root of Trust and encryption for your design.

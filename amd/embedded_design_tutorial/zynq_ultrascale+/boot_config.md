@@ -290,7 +290,7 @@ For more information, refer to the PetaLinux Tools Documentation: Reference Guid
   2. Select **PMU** for Destination CPU.
   3. Click **OK**.
 
-![](images/boot_config/image12.png)
+![](images/boot_config/image12.jpeg)
 
 5. The next partition to be added is the TF-A firmware. For this, set the Partition type to datafile.
 
@@ -318,7 +318,7 @@ For more information, refer to the PetaLinux Tools Documentation: Reference Guid
     3. Set the Destination CPU to **A53 0**.
     4. Set the Exception Level to **EL2**.
 
-![](images/boot_config/image15.png)
+![](images/boot_config/image15.jpeg)
 
   2. Click **OK**.
 
@@ -388,7 +388,7 @@ To test the image in this example, load the boot image (qspi_BOOT.bin) onto QSPI
 
 6. Click Program to start the process of programming the QSPI flash with the **qspi_BOOT.bin**.
 
-![](images/boot_config/image18.png)
+![](images/boot_config/image18.jpeg)
 
 Wait until you see the message “Flash Operation Successful” in the console, as shown in the following image.
 
@@ -399,7 +399,7 @@ Wait until you see the message “Flash Operation Successful” in the console, 
 1. Connect the USB-UART on the board to the host machine. Connect the micro USB cable to micro USB port J83 on the ZCU102 board, and connect the other end to an open USB port on the host machine.
 2. Configure the board to boot in QSPI boot mode by switching SW6 as shown in the following figure.
 
-![](images/boot_config/image21.png)
+![](images/boot_config/image21.jpeg)
 
 3. Connect 12V power to the ZCU102 6-Pin Molex connector.
 4. Start a terminal session, using Tera Term or Minicom depending on the host machine being used, and the COM port and baud rate as shown in the following figure.
@@ -441,7 +441,7 @@ The following sections demonstrate the basic steps involved in this boot mode.
 1. Connect a USB cable between the USB-JTAG J2 connector on the target and the USB port on the host machine.
 2. Set the board to JTAG boot mode by setting the SW6 switch, as shown in the following figure.
 
-![](images/boot_config/image26.png)
+![](images/boot_config/image26.jpeg)
 
 3. Power on the board using switch SW1. Open the XSCT console in the Vitis IDE by clicking the XSCT button. Alternatively, you can also open the XSCT console by selecting **Xilinx → XSCT Console**.
 4. In the XSCT console, connect to the target over JTAG using the **connect** command:
@@ -642,7 +642,7 @@ In this section you will load the boot images on the ZCU102 target using the DFU
 
 Set ZCU102 for USB boot mode by setting SW6 (1-OFF, 2-OFF, 3-OFF, and 4-ON), as shown below:
 
-![](images/boot_config/image31.png)
+![](images/boot_config/image31.jpeg)
 
 2. Connect a USB 3.0 cable to a J96 USB 3 ULPI connector. Connect other end of the cable to a USB port on the host machine.
 3. Connect a USB micro cable between the USB-UART port on the board (J83) and the host machine.

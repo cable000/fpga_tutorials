@@ -208,6 +208,212 @@ Make sure you have the following files for creating the Linux domain:
 
 ### Creating the Bare-Metal Application Project
 
+1. Launch Vitis and use a new workspace: \edt\design\_example_1*\* for this project.
+2. In the Vitis IDE, select **File → New → Application Project**. The New Project wizard opens.
+3. Use the information in the table below to make your selections in the wizard.
+
+
+| **Screen**                  | **System Properties**               | **Settings**                   |
+|-----------------------------| ------------------------------------|--------------------------------|
+| Platform                    | Create a New Platform from Hardware | edt_zcu102_wrapper.xsa         |
+|                             | Generate Boot Components            | uncheck                        |
+| Application project details | Application project name            | tmr_psled_r5                   |
+|                             | System project name                 | tmr_psled_r5_system            |
+|                             | Target processor                    | psu_cortexr5_0                 |
+| Domain                      | Domain                              | psu_cortex5_0                  |
+| Templates                   | Available templates                 | Empty Application(C)           |       
+
+
+4. Click Finish.
+
+The New Project wizard closes and the Vitis IDE creates the tmr_psled_r5 application project, which you can view in the Project Explorer.
+
+5. In the Project Explorer tab, expand the **tmr_psled_r5** project.
+6. Right-click the src directory, and select **Import** to open the Import dialog box.
+7. Expand General in the Import dialog box and select **File System**.
+8. Click **Next**.
+9. Select **Browse** and navigate to the **ref_files/design1** folder.
+10. Click **OK**.
+11. Select and add the **timer_psled_r5.c** file.
+12. Click **Finish**.
+
+The Vitis IDE automatically builds the application and displays the status in the console window.
+
+## Modifying the Linker Script
+
+1. In the Project Explorer, expand the tmr_psled_r5 project.
+2. In the **src** directory, double-click **lscript.ld** to open the linker script for this project.
+3. In the linker script in Available Memory Regions, modify the following attributes for **psu_r5_ddr_0_MEM_0**:
+
+Base Address: **0x70000000** Size: **0x10000000**
+
+The following figure shows the linker script modification. The following figure is for representation only. Actual memory region might vary in case of isolation settings.
+
+![](images/system_design/image13.png)
+
+This modification in the linker script ensures that the RPU bare-metal application resides above **0x70000000** base address in the DDR memory, and occupies no more than 256 MB of size.
+
+4. Type **Ctrl+S** to save the changes.
+5. Modify the BSP to configure UART with UART_1. For more information, see Modifying the hello_sys_a53 Application Source Code.
+6. Right-click the **tmr_psled_r5** project and select **Build Project**.
+7. Verify that the application is compiled and linked successfully and that the **tmr_psled_r5.elf** file is generated in the **tmr_psled_r5\Debug** folder.
+
+### Creating the Linux Domain for Linux Applications
+
+To create a Linux domain for generating Linux applications, follow these steps:
+
+  1. In the Explorer view of the Vitis IDE, expand the edt_zcu102_wrapper platform project.
+  2. Double-click **platform.spr** in the Explorer view to open the platform explorer.
+  3. Click image1 in the top right hand corner to add the domain.
+  4. When the new domain window opens, enter the following details:
+    - Name: Linux_Domain
+    - Display name: Linux_Domain
+    - OS: Linux
+    - Processor: psu_cortexa53
+    - Supported runtimes: C/C++
+    - Architecture: 64-bit
+    - Bif file: Provide a sample bif file.
+    - Boot Component Directory: Create a boot directory and provide the path.
+    - Linux Image Directory: Provide the same boot directory path.
+
+5. Build the platform to make the domain change take effects.
+
+## Creating the Linux Application Project
+
+In the Vitis IDE, select **File → New → Application Project**. The New Project wizard opens.
+Use the information in the table below to make your selections in the wizard.
+
+| **Screen**                  | **System Properties**               | **Settings**                   |
+|-----------------------------| ------------------------------------|--------------------------------|
+| Platform                    | Create a New Platform from Hardware | edt_zcu102_wrapper             |
+|                             | Generate Boot Components            | uncheck                        |
+| Application project details | Application project name            | ps_pl_linux_app                |
+|                             | System project name                 | ps_pl_linux_app_system         |
+|                             | Target processor                    | psu_cortexa53 SMP              |
+| Domain                      | Domain                              | Linux_Domain                   |
+| Templates                   | Available templates                 | Linux Empty Application        |    
+
+Since we have already created the Linux domain on psu_cortexa53, it shows up in the target processor list. If you’d like to create the domain during application creation process, you need to check “Show all processors in the hardware specification” to let the wizard show all processors. By default, it only shows the processors that have been used by the domains in the platform.
+
+3. Click **Finish**.
+
+The New Project wizard closes and the Vitis IDE creates the ps_pl_linux_app application project, which can be found in the Project Explorer view.
+
+4. In the Project Explorer view, expand the **ps_pl_linux_app** project.
+5. Right-click the **src** directory, and select **Import** to open the Import view.
+6. Expand General in the Import dialog box and select **File System**.
+7. Click **Next**.
+8. Select **Browse** and navigate to the **ref_files/design1** folder.
+9. Click **OK**.
+10. Select and add the **ps_pl_linux_app.c** file.
+
+**Note**
+The application might fail to build because of a missing reference to the pthread library. The next section shows how to add the pthread library.
+
+### Modifying the Build Settings
+
+This application makes use of pthreads from the pthread library. Add the pthread library as follows:
+
+  1. Right-click **ps_pl_linux_app**, and click **C/C++ Build Settings**.
+  2. Refer to the following figures to add the pthread library.
+
+![](images/system_design/image14.png)
+
+![](images/system_design/image15.png)
+
+## Creating a Boot Image
+
+Now that all the individual images are ready, you will create the boot image to load all of these components on a Zynq UltraScale+ device. This can be done using the Create Boot Image wizard in the Vitis IDE by performing the following steps. This example creates a boot image BOOT.bin in **C:\edt\design1**.
+
+1. Launch the Vitis IDE, if it is not already running.
+2. Set the workspace based on the project you created in Zynq UltraScale+ MPSoC Processing System Configuration. For example: **C:\edt**.
+3. Select **Xilinx → Create Boot Image**.
+4. In the Create Boot Image wizard, add the settings and partitions as shown in the following figure.
+
+![](images/system_design/image16.png)
+
+**Note**
+This boot image requires PL bitstream **edt_zcu102_wrapper.bit** (Partition Type - Datafile, Destination Device - PL). The bitstream partition needs to be added right after the bootloader while you create the boot image. The R5 application tmr_psled_r5.elf is added as partition in this boot image.
+
+5. After adding all the partitions, click **Create Image**.
+
+**Important**
+Ensure that you have set the correct exception levels for Trusted Firmware-A (TF-A) (EL-3, TrustZone) and U-Boot (EL-2) partitions. These settings can be ignored for other partitions.
+
+## Running the Image on a ZCU102 Board
+
+### Preparing the SD Card
+
+Copy the images and executables onto an SD card and load it into the SD card slot in the board.
+
+  1. Copy the **BOOT.bin** and **image.ub** files to an SD card.
+
+  **Note**
+  **BOOT.bin** is located in **C:\edt\design1**.
+
+  2. Copy the Linux application, **ps_pl_linux_app.elf**, to the same SD card. The application can be found in **C:\edt\ps_pl_linux_app\Debug**.
+
+### Target Setup
+
+1. Load the SD card into the ZCU102 board, in the J100 connector.
+2. Connect the USB-UART on the board to the host machine.
+3. Connect the Micro USB cable into the ZCU102 Board Micro USB port J83, and the other end into an open USB port on the host machine.
+4. Configure the board to boot in SD boot mode by setting switch SW6 as shown in the following figure.
+
+![](images/system_design/image17.jpeg)
+
+5. Connect 12V power to the ZCU102 6-Pin Molex connector.
+6. Start a terminal session, using Tera Term or Minicom depending on the host machine being used, as well as the COM port and baud rate for your system.
+7. For port settings, verify the COM port in the device manager. There are four USB-UART interfaces exposed by the ZCU102 board.
+8. Select the COM port associated with the interface with the lowest number. In this case, for UART-0, select the COM port with interface-0.
+9. Similarly, for UART-1, select the COM port with interface-1. Remember that the R5 BSP has been configured to use UART-1, so R5 application messages will appear on the COM port with the UART-1 terminal.
+
+### Power On Target and Run Applications
+
+1. Turn on the ZCU102 board using SW1, and wait until Linux loads on the board.
+
+You can see the initial boot sequence messages on your terminal screen representing UART-0. The terminal screen configured for UART-1 also prints a message. This is the print message from the R5 bare-metal application running on the RPU, configured to use the UART-1 interface. This application is loaded by the FSBL onto the RPU.
+
+2. Now that this application is running, notice the PS LED is being toggled by the application, and follow the instructions in the application terminal.
+
+![](images/system_design/image18.png)
+
+### Running Linux Applications
+
+After Linux is up on the ZCU102 system, log into the Linux target with login: root and password: root. The Linux target is now ready to run applications. Run the Linux application by performing the following steps.
+
+1. Copy the application from the SD card mount point to **/tmp**:
+
+**Note**
+Mount the SD card manually if you fail to find SD card contents in this location.
+
+`# mount /dev/mmcblk0p1 /media/`
+
+Copy the application to **/tmp**.
+
+`# cp /media/ps_pl_linux_app.elf /tmp`
+
+2. Run the application.
+
+`# /tmp/ps_pl_linux_app.elf`
+
+![](images/system_design/image19.png)
+
+## Reference Design Automation
+
+The ref_design for this example provides not only the source code for applications, but also a Makefile to run through the design generation process. To generate the binaries, run the following command:
+
+```
+cd ref_files/design1
+make all
+```
+
+## Summary
+
+In this design example, you created the hardware design in Vivado with processing system and GPIO modules. The hardware was exported to an XSA file. You imported the hardware to PetaLinux to update the device tree. The regenerated PetaLinux image can boot the board. You also imported the XSA to the Vitis software platform to create the platform project and developed software for Arm Cortex-R5F. You finally created the boot image to include software binaries to run on both the APU and RPU to make the system perform as planned.
+
+The next chapter introduces more boot and configuration techniques.
+
 
 
 

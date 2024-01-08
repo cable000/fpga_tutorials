@@ -11,7 +11,7 @@ The Zynq UltraScale+ device consists of quad-core Arm® Cortex™-A53-based APU,
 
 ### Board Support
 
-The tutorials are based on the tutorials from tutorials found on [AMD(Xilinx) github](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2021.2/build/html/docs/Introduction/ZynqMPSoC-EDT/ZynqMPSoC-EDT.html)
+The tutorials are based on the tutorials found on [AMD (Xilinx) github](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2021.2/build/html/docs/Introduction/ZynqMPSoC-EDT/ZynqMPSoC-EDT.html)
 
 The tutorials were developed for the ZCU102 board but should work on most Zynq UltraScale+ based boards. The following table indicates the additional boards that these tutorials were tested with. Any additional modifications are changes to the original ZCU102 will be addressed in the document.
 

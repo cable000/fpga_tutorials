@@ -27,7 +27,7 @@ The platform project reads in hardware information from the XSA file and contain
 
 ## Example Input and Output Files¶
 
-- Input: hardware handoff XSA file (**edt_zcu111_wrapper.xsa**)
+- Input: hardware handoff XSA file (**edt_\<boardname\>_wrapper.xsa**)
 - Output:
   - Standalone BSP libraries for Arm Cortex-A53
   - Boot components (FSBL: **zynqmp.elf** and PMUFW: **pmufw.elf**)
@@ -42,7 +42,7 @@ The following steps show how to create a platform project with a standalone doma
   - From Windows Start menu, select Xilinx Design Tools → Xilinx Vitis 2021.2; or
   - Double-click the C:\Xilinx\Vitis\2021.2\bin\vitis.bat file.
 
-2. Select the workspace C\edt\edt_zcu102_workspace and continue.
+2. Select the workspace C:\edt\edt_zcu102_workspace and continue. (Any workspace can be set here. If working on a Ubuntu this pathname will be different)
 
 ![](images/two/image1.png)
 

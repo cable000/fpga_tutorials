@@ -115,7 +115,7 @@ ZCU111 Board Connection Guide
 
 1. Open your preferred serial communication utility for the COM port.
 **Note**
-You can use any serial communication utility in your system. The Vitis IDE provides a serial terminal utility. We will use it throughout the tutorial; select **Window → Show View → Vitis** Serial Terminal in Vitis IDE to open it.
+You can use any serial communication utility in your system. The Vitis IDE provides a serial terminal utility. We will use it throughout the tutorial; select **Window → Show View → Zilinx -> Vitis** Serial Terminal in Vitis IDE to open it.
 
 2. Click the + button to set the serial configuration.
 

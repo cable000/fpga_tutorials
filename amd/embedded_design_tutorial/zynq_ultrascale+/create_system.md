@@ -13,13 +13,13 @@ The Zynq UltraScale+ device consists of quad-core Arm® Cortex™-A53-based APU,
 
 The tutorials are based on the tutorials found on [AMD (Xilinx) github](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2021.2/build/html/docs/Introduction/ZynqMPSoC-EDT/ZynqMPSoC-EDT.html)
 
-The tutorials were developed for the ZCU102 board but should work on most Zynq UltraScale+ based boards. The following table indicates the additional boards that these tutorials were tested with. Any additional modifications are changes to the original ZCU102 will be addressed in the document.
+The tutorials were developed for the ZCU102 board but should work on most Zynq UltraScale+ based boards. The following table indicates the additional boards that these tutorials were tested with. Any additional modifications or changes to the original documentation based on the type of board used will be noted in the documentation.
 
 
-| **Board**                   | **Tested?**                                                       |
-------------------------------|-------------------------------------------------------------------|
-| ZCU102                      | Originally baselined documentation. Not tested.               |   |
-| ZCU111                      | Yes                                                               |
+| **Board**                   | **Tested?**                            |
+|-----------------------------|----------------------------------------|
+| ZCU102                      | Original documentation. Not tested.    |
+| ZCU111                      | Yes                                    |
 
 ## Zynq UltraScale+ System Configuration
 
@@ -45,16 +45,16 @@ The output of this example design is the hardware configuration XSA. It will be 
 2. In the Vivado Quick Start page, click **Create Project** to open the New Project wizard.
 3. Use the information in the following table to make selections in each of the wizard screen.
 
-| **Screen**           | **System Property**                | **Setting or Command to Use** |
-| -------------------- | ---------------------------------- | ----------------------------- |
-| Project Name         | Project Name                       | edt                           |
-|                      | Project Location                   | Select a folder               |
-| Project Type         | Create Project Sub-directory       | Leave checked                 |
-|                      | Specify type of project to create  | RTL Project                   |
-|                      | Don't specify sources at this time | Leave checked                 |
-| Default Part         | Select                             | Select **Boards** tab         |
-|                      | Display Name                       | Select Zynq UltraScale+ Board |
-| New Project Summrary | Project Summary                    | Review project summary        |
+| **Screen**           | **System Property**                | **Setting or Command to Use**      |
+| -------------------- | ---------------------------------- | ---------------------------------- |
+| Project Name         | Project Name                       | edt                                |
+|                      | Project Location                   | Select a folder                    |
+| Project Type         | Create Project Sub-directory       | Leave checked                      |
+|                      | Specify type of project to create  | RTL Project                        |
+|                      | Don't specify sources at this time | Leave checked                      |
+| Default Part         | Select                             | Select **Boards** tab              |
+|                      | Display Name                       | Select your Zynq UltraScale+ Board |
+| New Project Summrary | Project Summary                    | Review project summary             |
 
 4. Click **Finish**. The New Project wizard closes and the project you just created opens in the Vivado design tool.
 

@@ -33,7 +33,7 @@ For this example, you will launch the Vivado Design Suite and create a project w
 
 This example design requires no input files. We will create the Vivado design from scratch. The design includes the processing system module of the MPSoC. No PL IPs will be added in this example design, so this design does not need to run through implementation and bitstream generation.
 
-<boardname> = zcu102,zcu111,zcu104,...
+\<boardname\> = zcu102,zcu111,zcu104,...
 
 The output of this example design is the hardware configuration XSA. It will be used for further software development.
 

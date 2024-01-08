@@ -53,7 +53,7 @@ The output of this example design is the hardware configuration XSA. It will be 
 |                      | Specify type of project to create  | RTL Project                   |
 |                      | Don't specify sources at this time | Leave checked                 |
 | Default Part         | Select                             | Select **Boards** tab         |
-|                      | Display Name                       | Select ZCU111 Board           |
+|                      | Display Name                       | Select Zynq UltraScale+ Board |
 | New Project Summrary | Project Summary                    | Review project summary        |
 
 4. Click **Finish**. The New Project wizard closes and the project you just created opens in the Vivado design tool.

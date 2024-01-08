@@ -20,12 +20,13 @@ The main processing units in the Zynq UltraScale+ processing system are listed b
 
 - **Application processing unit**: Quad-core Arm® Cortex™-A53 MPCore processors
 - **Real time processing unit**: Dual-core Arm Cortex™-R5F MPCore processors
-- **Graphics processing unit**: Arm Mali™ 400 MP2 GPU 
+- **Graphics processing unit**: Arm Mali™ 400 MP2 GPU
+**Note** The ZCU111 does not contain the GPU.
 - **Platform management unit (PMU)**: Xilinx MicroBlaze™ based platform management unit
 
 The platform project reads in hardware information from the XSA file and contains the runtime environment for the above processing units. Application software can link against the libraries generated in the platform project.
 
-## Example Input and Output Files¶
+## Example Input and Output Files
 
 - Input: hardware handoff XSA file (**edt_\<boardname\>_wrapper.xsa**)
 - Output:
@@ -83,7 +84,7 @@ Build the hardware by right-clicking the platform, then selecting **Build Projec
 
 ![](images/two/image4.jpeg)
 
-The platform project is ready. You can create applications using this platform and test on zcu102 hardware.
+The platform project is ready. You can create applications using this platform and test on your ZCU hardware.
 
 **Note** The project build process builds the standalone BSP, FSBL, and PMUFW. FSBL and PMUFW have their own BSP. The build process takes some time.
 

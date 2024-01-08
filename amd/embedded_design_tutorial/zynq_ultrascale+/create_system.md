@@ -13,7 +13,7 @@ The Zynq UltraScale+ device consists of quad-core Arm® Cortex™-A53-based APU,
 
 Creating a Zynq UltraScale+ system design involves configuring the PS to select the appropriate boot devices and peripherals. To start with, as long as the PS peripherals and available MIO connections meet the design requirements, no bitstream is required. This chapter guides you through creating a simple PS-based design that does not require a bitstream.
 
-## Example: Creating a New Embedded Project with Zynq UltraScale+
+## Example 1: Creating a New Embedded Project with Zynq UltraScale+
 
 For this example, you will launch the Vivado Design Suite and create a project with an embedded processor system as the top level.
 
@@ -35,7 +35,7 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 | **Screen**           | **System Property**                | **Setting or Command to Use** |
 | -------------------- | ---------------------------------- | ----------------------------- |
-| Project Name         | Project Name                       | edt_zcu111                    |
+| Project Name         | Project Name                       | edt                           |
 |                      | Project Location                   | Select a folder               |
 | Project Type         | Create Project Sub-directory       | Leave checked                 |
 |                      | Specify type of project to create  | RTL Project                   |
@@ -60,7 +60,7 @@ The Create Block Design wizard opens.
    
 | **Screen**           | **System Property**                | **Setting or Command to Use** |
 | -------------------- | ---------------------------------- | ----------------------------- |
-| Create Block Design  | Design Name                        | edt_zcu111                    |
+| Create Block Design  | Design Name                        | edt                           |
 |                      | Directory                          | <Local to Project             |
 |                      | Specify Source                     | Set Design Sources            |
 

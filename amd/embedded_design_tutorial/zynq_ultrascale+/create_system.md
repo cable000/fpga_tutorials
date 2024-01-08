@@ -147,7 +147,7 @@ A message dialog box that states “Validation successful. There are no errors o
 2. Click **OK** to close the message.
 3. In the Block Design view, click the **Sources** page.
 4. Click **Hierarchy.**
-5. Under Design Sources, right-click **edt_<boardname>** and select **Create HDL Wrapper.**
+5. Under Design Sources, right-click **edt_\<boardname\>** and select **Create HDL Wrapper.**
 
 The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wrapper file for the processor subsystem.
 

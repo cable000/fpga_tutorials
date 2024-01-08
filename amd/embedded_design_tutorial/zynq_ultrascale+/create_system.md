@@ -74,7 +74,7 @@ The Create Block Design wizard opens.
    
 | **Screen**           | **System Property**                | **Setting or Command to Use** |
 | -------------------- | ---------------------------------- | ----------------------------- |
-| Create Block Design  | Design Name                        | edt                           |
+| Create Block Design  | Design Name                        | edt_\<boardname\>             |
 |                      | Directory                          | <Local to Project             |
 |                      | Specify Source                     | Set Design Sources            |
 
@@ -155,7 +155,7 @@ The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wra
 
 6. Select **Let Vivado Manage Wrapper** and auto-update and click **OK.**
 
-7. In the Block Diagram, Sources window, under Design Sources, you can see **edt_<boardname>_wrapper** is created by Vivado. Expand the hierarchy, you can see **edt_<boardname>.bd** is instantiated.
+7. In the Block Diagram, Sources window, under Design Sources, you can see **edt_\<boardname\>_wrapper** is created by Vivado. Expand the hierarchy, you can see **edt_\<boardname\>.bd** is instantiated.
 
 8. Select **Generate Block Design** from Flow Navigator -> IP INTEGRATOR.
 

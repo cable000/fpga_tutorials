@@ -26,6 +26,13 @@ The output of this example design is the hardware configuration XSA. It will be 
 - Input: N/A</li>
 - Output: edt_zcu111_wrapper.xsa</li>
 
+### Board Support
+
+| **Board**                   | **Tested?**                                                       |
+------------------------------|-------------------------------------------------------------------|
+| ZCU102                      | Docs originally tested on. Not currently have board to test on.   |
+| ZCU104                      | No                                                                |
+| ZCU111                      | Yes                                                               |
 
 ### Starting Your Design
 
@@ -97,7 +104,7 @@ The Run Block Automation view opens.
 
 4. Click **OK** to accept the default processor system options and make default pin connections.
 
-This configuration wizard enables many peripherals in the Processing System with some multiplexed I/O (MIO) pins assigned to them according to the board layout of the ZCU102 board. For example, UART0 and UART1 are enabled. The UART signals are connected to a USB-UART connector through UART to the USB converter chip on the ZCU102 board.
+This configuration wizard enables many peripherals in the Processing System with some multiplexed I/O (MIO) pins assigned to them according to the board layout of the supported board. For example, UART0 and UART1 are enabled. The UART signals are connected to a USB-UART connector through UART to the USB converter chip on the ZCU102 board.
 
 5. To verify, double-click the Zynq UltraScale+ Processing System block in the block diagram window.
 
@@ -109,7 +116,7 @@ Note the check marks that appear next to each peripheral name in the Zynq UltraS
 
 ![](images/image6.png)
 
-This page enables you to configure low speed and high speed peripherals. For this example, you will continue with the basic connection enabled using Board preset for ZCU102.
+This page enables you to configure low speed and high speed peripherals. For this example, you will continue with the basic connection enabled using Board presets.
 
 7. In the Page Navigator, select **PS-PL Configuration.**
 8. In PS-PL Configuration, expand **PS-PL Interfaces** and expand the **Master Interface.**
@@ -186,7 +193,7 @@ For this example, we do not have programmable logic, so the pre-synthesis XSA is
 
 ### Example Summary
 
-In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU102 board. You exported the hardware XSA file for future software development example projects.
+In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU111 board. You exported the hardware XSA file for future software development example projects.
 
 In the [next chapter](build_software.md), you will learn how to develop software based on the hardware created in this example.
 

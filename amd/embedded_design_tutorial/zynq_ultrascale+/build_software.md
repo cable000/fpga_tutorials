@@ -104,9 +104,8 @@ In this example, you will create a “Hello World” application based on the pl
 ZCU111 Board Connection Guide
 
 1. Connect the power cable to the board.
-2. Connect a USB micro cable between the Linux/Windows host machine and **J2 USB JTAG** connector on the target board.
-3. Connect a USB micro cable to connector J83 on the target board with the Windows host machine. This is used for USB to serial transfer.
-4. Ensure that the SW6 Switch on the bottom right is set to **JTAG boot mode** as shown in the following figure.
+2. Connect a USB micro cable to connector **J83** on the target board with the host machine. This is used for USB to serial transfer.
+3. Ensure that the SW6 Switch on the bottom right is set to **JTAG boot mode** as shown in the following figure. For ZCU111 the JTAG setting are ON,ON,ON,ON.
 
 ![](images/two/image6.jpeg)
 

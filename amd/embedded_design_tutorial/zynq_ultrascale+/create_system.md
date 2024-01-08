@@ -9,6 +9,18 @@ The Zynq UltraScale+ device consists of quad-core Arm® Cortex™-A53-based APU,
 - The Zynq UltraScale+ PS can be used in a standalone mode, without attaching any additional fabric IP.</li>
 - IP cores can be instantiated in fabric and attached to the Zynq UltraScale+ PS as a PS+PL combination.</li>
 
+### Board Support
+
+The tutorials are based on the tutorials from tutorials found on [AMD(Xilinx) github](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2021.2/build/html/docs/Introduction/ZynqMPSoC-EDT/ZynqMPSoC-EDT.html)
+
+The tutorials were developed for the ZCU102 board but should work on most Zynq UltraScale+ based boards. The following table indicates the additional boards that these tutorials were tested with. Any additional modifications are changes to the original ZCU102 will be addressed in the document.
+
+
+| **Board**                   | **Tested?**                                                       |
+------------------------------|-------------------------------------------------------------------|
+| ZCU102                      | Originally baselined documentation. Not tested.               |   |
+| ZCU111                      | Yes                                                               |
+
 ## Zynq UltraScale+ System Configuration
 
 Creating a Zynq UltraScale+ system design involves configuring the PS to select the appropriate boot devices and peripherals. To start with, as long as the PS peripherals and available MIO connections meet the design requirements, no bitstream is required. This chapter guides you through creating a simple PS-based design that does not require a bitstream.
@@ -26,13 +38,6 @@ The output of this example design is the hardware configuration XSA. It will be 
 - Input: N/A</li>
 - Output: edt_zcu111_wrapper.xsa</li>
 
-### Board Support
-
-| **Board**                   | **Tested?**                                                       |
-------------------------------|-------------------------------------------------------------------|
-| ZCU102                      | Docs originally tested on. Not currently have board to test on.   |
-| ZCU104                      | No                                                                |
-| ZCU111                      | Yes                                                               |
 
 ### Starting Your Design
 

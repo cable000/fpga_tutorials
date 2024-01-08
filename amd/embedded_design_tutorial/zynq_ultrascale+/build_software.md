@@ -20,7 +20,7 @@ The main processing units in the Zynq UltraScale+ processing system are listed b
 
 - **Application processing unit**: Quad-core Arm® Cortex™-A53 MPCore processors
 - **Real time processing unit**: Dual-core Arm Cortex™-R5F MPCore processors
-- **Graphics processing unit**: Arm Mali™ 400 MP2 GPU
+- **Graphics processing unit**: Arm Mali™ 400 MP2 GPU 
 - **Platform management unit (PMU)**: Xilinx MicroBlaze™ based platform management unit
 
 The platform project reads in hardware information from the XSA file and contains the runtime environment for the above processing units. Application software can link against the libraries generated in the platform project.
@@ -42,7 +42,7 @@ The following steps show how to create a platform project with a standalone doma
   - From Windows Start menu, select Xilinx Design Tools → Xilinx Vitis 2021.2; or
   - Double-click the C:\Xilinx\Vitis\2021.2\bin\vitis.bat file.
 
-2. Select the workspace C:\edt\edt_zcu102_workspace and continue. (Any workspace can be set here. If working on a Ubuntu this pathname will be different)
+2. Select the workspace C:\edt\edt_\<boardname>\_workspace and continue. (Any workspace can be set here. If working on a Ubuntu this pathname will be different)
 
 ![](images/two/image1.png)
 

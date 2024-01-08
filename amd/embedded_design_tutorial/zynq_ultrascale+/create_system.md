@@ -38,7 +38,7 @@ This example design requires no input files. We will create the Vivado design fr
 The output of this example design is the hardware configuration XSA. It will be used for further software development.
 
 - Input: N/A</li>
-- Output: edt_<boardname>_wrapper.xsa</li>
+- Output: edt_\<boardname\>_wrapper.xsa</li>
 
 
 ### Starting Your Design
@@ -49,7 +49,7 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 | **Screen**           | **System Property**                | **Setting or Command to Use**      |
 | -------------------- | ---------------------------------- | ---------------------------------- |
-| Project Name         | Project Name                       | edt_<boardname>                    |
+| Project Name         | Project Name                       | edt_\<boardname\>                  |
 |                      | Project Location                   | Select a folder                    |
 | Project Type         | Create Project Sub-directory       | Leave checked                      |
 |                      | Specify type of project to create  | RTL Project                        |

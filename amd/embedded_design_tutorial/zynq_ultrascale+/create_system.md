@@ -33,10 +33,12 @@ For this example, you will launch the Vivado Design Suite and create a project w
 
 This example design requires no input files. We will create the Vivado design from scratch. The design includes the processing system module of the MPSoC. No PL IPs will be added in this example design, so this design does not need to run through implementation and bitstream generation.
 
+<boardname> = zcu102,zcu111,zcu104,...
+
 The output of this example design is the hardware configuration XSA. It will be used for further software development.
 
 - Input: N/A</li>
-- Output: edt_zcu111_wrapper.xsa</li>
+- Output: edt_<boardname>_wrapper.xsa</li>
 
 
 ### Starting Your Design
@@ -47,13 +49,13 @@ The output of this example design is the hardware configuration XSA. It will be 
 
 | **Screen**           | **System Property**                | **Setting or Command to Use**      |
 | -------------------- | ---------------------------------- | ---------------------------------- |
-| Project Name         | Project Name                       | edt                                |
+| Project Name         | Project Name                       | edt_<boardname>                    |
 |                      | Project Location                   | Select a folder                    |
 | Project Type         | Create Project Sub-directory       | Leave checked                      |
 |                      | Specify type of project to create  | RTL Project                        |
 |                      | Don't specify sources at this time | Leave checked                      |
 | Default Part         | Select                             | Select **Boards** tab              |
-|                      | Display Name                       | Select your Zynq UltraScale+ Board |
+|                      | Display Name                       | Select the Zynq UltraScale+ Board  |
 | New Project Summrary | Project Summary                    | Review project summary             |
 
 4. Click **Finish**. The New Project wizard closes and the project you just created opens in the Vivado design tool.
@@ -103,7 +105,7 @@ In the Block Diagram window, notice the message stating that designer assistance
 
 ![](images/image4.png)
 
-3. You will now use a preset template created for the ZCU111 board. Click the **Run Block Automation** link.
+3. You will now use a preset template created for the ZCU board. Click the **Run Block Automation** link.
 
 The Run Block Automation view opens.
 
@@ -145,7 +147,7 @@ A message dialog box that states “Validation successful. There are no errors o
 2. Click **OK** to close the message.
 3. In the Block Design view, click the **Sources** page.
 4. Click **Hierarchy.**
-5. Under Design Sources, right-click **edt_zcu111** and select **Create HDL Wrapper.**
+5. Under Design Sources, right-click **edt_<boardname>** and select **Create HDL Wrapper.**
 
 The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wrapper file for the processor subsystem.
 
@@ -153,7 +155,7 @@ The Create HDL Wrapper dialog box opens. Use this dialog box to create a HDL wra
 
 6. Select **Let Vivado Manage Wrapper** and auto-update and click **OK.**
 
-7. In the Block Diagram, Sources window, under Design Sources, you can see **edt_zcu111_wrapper** is created by Vivado. Expand the hierarchy, you can see **edt_zcu111.bd** is instantiated.
+7. In the Block Diagram, Sources window, under Design Sources, you can see **edt_<boardname>_wrapper** is created by Vivado. Expand the hierarchy, you can see **edt_<boardname>.bd** is instantiated.
 
 8. Select **Generate Block Design** from Flow Navigator -> IP INTEGRATOR.
 
@@ -198,7 +200,7 @@ For this example, we do not have programmable logic, so the pre-synthesis XSA is
 
 ### Example Summary
 
-In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU111 board. You exported the hardware XSA file for future software development example projects.
+In this example, you created a Vivado design with an MPSoC processing system and configured it for the ZCU board. You exported the hardware XSA file for future software development example projects.
 
 In the [next chapter](build_software.md), you will learn how to develop software based on the hardware created in this example.
 

@@ -20,3 +20,8 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 [Boot and Configuration](boot_config.md) shows the integration of components to configure and create boot images for a Zynq UltraScale+ system. The purpose of this chapter is to understand how to integrate and load boot loaders.
 
 Secure Boot is an optional chapter that introduces the steps to build the Hardware Root of Trust and encryption for your design.
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+[PetaLinux install](sd_card.md) shows the steps to install a PetaLinux OS on a SD Card

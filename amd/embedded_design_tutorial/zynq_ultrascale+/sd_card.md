@@ -62,6 +62,7 @@ For partitioning and formatting an SD card, the following tools are required:
     ```
 
 # Steps to Flash and Boot the PetaLinux Images Manually
+
   1. Copy the following files from <plnx-proj-root>/images/linux or <plnx-proj-root>/pre-built/linux/images/ into the root directory of the first partition, which is in FAT32 format in the SD card:
     - BOOT.BIN
     - image.ub

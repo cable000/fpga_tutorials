@@ -21,7 +21,7 @@ Find the BSP's for the Board on the Xilinx (AMD) site:
  
 **Important**
 1. This example requires a Linux host machine with PetaLinux installed. Refer to the PetaLinux Tools Documentation: Reference Guide (UG1144) for information about dependencies for PetaLinux 2021.2.
-2. This example uses the [ZCU102 PetaLinux BSP]( https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) to create a PetaLinux project. Ensure that you have downloaded the ZCU102 BSP for PetaLinux as instructed on the PetaLinux Tools download page.
+2. This example uses the [BSP]( https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) to create a PetaLinux project. Ensure that you have downloaded the correct BSP for your board for PetaLinux as instructed on the PetaLinux Tools download page.
 
 ## Creating a PetaLinux Image
 

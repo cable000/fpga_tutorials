@@ -60,10 +60,6 @@ The steps and logs for partitioning are as follows:
     Writing superblocks and file system accounting information: done
     ```
 
-Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
-Mount the EXT partition and untar rootfs.tar.gz to it.
-Finally unmount the SD card and use it for booting.
-
 # Steps to Flash and Boot the PetaLinux Images Manually
   1. Copy the following files from <plnx-proj-root>/images/linux or <plnx-proj-root>/pre-built/linux/images/ into the root directory of the first partition, which is in FAT32 format in the SD card:
     - BOOT.BIN

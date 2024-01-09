@@ -290,7 +290,7 @@ This file is exported when you create the platform using the Vitis IDE; it conta
 
 Because the “Hello World” applications for Cortex-A53 and Cortex-R5F are identical, they cannot be differentiated based on the print contents, but you can view the details in the **Debug Perspective**.
 
-If you view the XSCT console, it shows the XSCT command history as shown in the following example:
+If you view the XSCT console (**Xilinx --> XSCT Console**), it shows the XSCT command history as shown in the following example:
 
 ```
 Downloading Program -- C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
@@ -317,7 +317,7 @@ Setting PC to Program Start Address 0x0000003c
 Successfully downloaded C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
 ```
 
-More debugging techniques are explored in the ![next chapter]().
+More debugging techniques are explored in the ![debugging_apps.md]().
 
 **Note**
 No bitstream download is required for the above software application to be executed on the Zynq UltraScale+ evaluation board. The Arm Cortex-R5F dual core is already present on the board. Basic initialization of this system to run a simple application is accomplished by the FSBL application.

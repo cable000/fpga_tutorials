@@ -79,7 +79,7 @@ For partitioning and formatting an SD card, the following tools are required:
   Several options can be used such as putty, minicom and teraterm.
   
     - If you have Vitis you can make a connection using the Vitis Serial Console under **Window->Show View->Xilinx->Vitis Serial Terminal**
-    - Another option is to use `screen /dev/ttyUSB1 115200` from a linux terminal.
+    - Another option is to use screen /dev/ttyUSB1 115200 from a linux terminal.
   
     
 

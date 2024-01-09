@@ -68,12 +68,18 @@ For partitioning and formatting an SD card, the following tools are required:
     - boot.scr
   2. Extract the rootfs.tar.gz folder into the ext4 partition of the SD card.
   3. Connect the serial port on the board to your workstation.
-  4. Open a console on the workstation and start the preferred serial communication program (For example: kermit, minicom, gtkterm) with the baud rate set to 115200 on that console.
+  4. Open a console on the workstation and start the preferred serial communication program (For example: kermit, minicom, gtkterm) with the baud rate set to 115200 on that console. ( Generally this has been /dev/ttyUSB1 on linux)
   5. Power off the board.
   6. Set the boot mode of the board to SD boot. Refer to the board documentation for details.
   7. Plug the SD card into the board.
   8. Power on the board.
   9. A boot message displays on the serial console.
+
+# Connecting up to the console using a serial connection
+  Several options can be used such as putty, minicom and teraterm.
+    - If you have Vitis you can make a connection using the Vitis Serial Console under **Window->Show View->Xilinx->Vitis Serial Terminal**
+    - Another option is to use `screen /dev/ttyUSB1 115200` from a linux terminal.
+  
     
 
 

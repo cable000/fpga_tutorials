@@ -16,7 +16,7 @@ The new device that has appeared is your Micro SD card. The left column gives th
 Now that you’ve noted what the device name is, you need to unmount it so that files can’t be read or written to the SD card while you are copying over the SD image.
 
   - Run umount /dev/sdd1, replacing sdd1 with whatever your SD card’s device name is (including the partition number).
-  - 
+    
 If your SD card shows up more than once in the output of df due to having multiple partitions on the SD card, you should unmount all of these partitions.
 
   - In the terminal, write the image to the card with the command below, making sure you replace the input file if= argument with the path to your .img file, and the /dev/sdd in the output file of= argument with the right device name. This is very important, as you will lose all data on the hard drive if you provide the wrong device name. Make sure the device name is the name of the whole Micro SD card as described above, not just a partition of it; for example, sdd, not sdds1, and mmcblk0, not mmcblk0p1.

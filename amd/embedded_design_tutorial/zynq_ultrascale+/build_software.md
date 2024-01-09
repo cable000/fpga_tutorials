@@ -317,7 +317,7 @@ Setting PC to Program Start Address 0x0000003c
 Successfully downloaded C:/edt/edt_zcu102_workspace/hello_r5/Debug/hello_r5.elf
 ```
 
-More debugging techniques are explored in the ![debugging_apps.md]().
+More debugging techniques are explored in the ![](debugging_app.md).
 
 **Note**
 No bitstream download is required for the above software application to be executed on the Zynq UltraScale+ evaluation board. The Arm Cortex-R5F dual core is already present on the board. Basic initialization of this system to run a simple application is accomplished by the FSBL application.

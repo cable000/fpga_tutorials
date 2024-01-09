@@ -63,6 +63,20 @@ The steps and logs for partitioning are as follows:
 Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
 Mount the EXT partition and untar rootfs.tar.gz to it.
 Finally unmount the SD card and use it for booting.
+
+# Steps to Flash and Boot the PetaLinux Images Manually
+  1. Copy the following files from <plnx-proj-root>/images/linux or <plnx-proj-root>/pre-built/linux/images/ into the root directory of the first partition, which is in FAT32 format in the SD card:
+    - BOOT.BIN
+    - image.ub
+    - boot.scr
+  2. Extract the rootfs.tar.gz folder into the ext4 partition of the SD card.
+  3. Connect the serial port on the board to your workstation.
+  4. Open a console on the workstation and start the preferred serial communication program (For example: kermit, minicom, gtkterm) with the baud rate set to 115200 on that console.
+  5. Power off the board.
+  6. Set the boot mode of the board to SD boot. Refer to the board documentation for details.
+  7. Plug the SD card into the board.
+  8. Power on the board.
+  9. A boot message displays on the serial console.
     
 
 

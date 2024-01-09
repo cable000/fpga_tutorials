@@ -5,7 +5,8 @@ For partitioning and formatting an SD card, the following tools are required:
 
   - fdisk
   - mkfs
-The steps and logs for partitioning are as follows:
+  - 
+  The steps and logs for partitioning are as follows:
 
   - `sudo fdisk /dev/sdb`
 

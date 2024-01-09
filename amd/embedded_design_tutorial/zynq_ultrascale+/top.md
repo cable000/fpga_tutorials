@@ -22,6 +22,6 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 Secure Boot is an optional chapter that introduces the steps to build the Hardware Root of Trust and encryption for your design.
 
 
+## Support Files
 
-
-[PetaLinux install](sd_card.md) shows the steps to install a PetaLinux OS on a SD Card
+[The installation process](install_process.md) shows the steps for setting up the SD Card, installing the PetaLinux OS and verifying the installation through a USB serial connection to the device.

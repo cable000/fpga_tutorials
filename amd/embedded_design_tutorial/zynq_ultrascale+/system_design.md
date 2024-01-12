@@ -223,9 +223,9 @@ Make sure you have the following files for creating the Linux domain:
 | Templates                   | Available templates                 | Empty Application(C)           |       
 
 
-4. Click Finish.
+4. Click **Finish**.
 
-The New Project wizard closes and the Vitis IDE creates the tmr_psled_r5 application project, which you can view in the Project Explorer.
+  The New Project wizard closes and the Vitis IDE creates the tmr_psled_r5 application project, which you can view in the Project Explorer.
 
 5. In the Project Explorer tab, expand the **tmr_psled_r5** project.
 6. Right-click the src directory, and select **Import** to open the Import dialog box.

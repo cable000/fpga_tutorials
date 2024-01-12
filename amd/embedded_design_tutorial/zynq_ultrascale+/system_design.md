@@ -159,10 +159,10 @@ We will run implementation of the Vivado design and export the post-implementati
 3. Make sure you have an HDL top file. Because this design is saved from the introduction design, we have already done it.
 4. Run synthesis, implementation, and bitstream generation:
 
-  1. Click **Generate Bitstream**.
-  2. Vivado displays a popup message saying “There are no implementation results available. OK to launch synthesis and implementation?”. Click **Yes**.
-  3. Review the **Launch Runs** dialogue, set the proper number of jobs to run simultaneously, and click **OK**.
-  4. Wait for Vivado to complete implementation. After it finishes, a Bitstream Generation Completed message will pop up. Click **Cancel** to close it.
+    1. Click **Generate Bitstream**.
+    2. Vivado displays a popup message saying “There are no implementation results available. OK to launch synthesis and implementation?”. Click **Yes**.
+    3. Review the **Launch Runs** dialogue, set the proper number of jobs to run simultaneously, and click **OK**.
+    4. Wait for Vivado to complete implementation. After it finishes, a Bitstream Generation Completed message will pop up. Click **Cancel** to close it.
 
 ![](images/system_design/image12.png)
 

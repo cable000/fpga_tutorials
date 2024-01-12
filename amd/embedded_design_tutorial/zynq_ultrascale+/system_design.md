@@ -139,14 +139,13 @@ We will run implementation of the Vivado design and export the post-implementati
 
 1. Validate the block diagram design:
 
-  1. Return to the block diagram view.
-  2. Save the block design (press **Ctrl+S**).
-  3. Click the **Validate Design** button on the block diagram toolbar. Alternatively, press the **F6** key.
+    1. Return to the block diagram view.
+    2. Save the block design (press **Ctrl+S**).
+    3. Click the **Validate Design** button on the block diagram toolbar. Alternatively, press the **F6** key.
 
-  It takes a while to validate the design. A message dialog box pops up and states “Validation successful. There  
-  are no errors or critical warnings in this design.” If it reports any errors or critical warnings, review the     previous steps and correct the errors.
+    It takes a while to validate the design. A message dialog box pops up and states “Validation successful.       There are no errors or critical warnings in this design.” If it reports any errors or critical warnings,       review the     previous steps and correct the errors.
 
-  4. Click **OK** to close the message.
+    4. Click **OK** to close the message.
 
 2. Generate output products:
 

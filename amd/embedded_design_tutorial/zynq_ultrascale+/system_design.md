@@ -164,18 +164,18 @@ We will run implementation of the Vivado design and export the post-implementati
     3. Review the **Launch Runs** dialogue, set the proper number of jobs to run simultaneously, and click **OK**.
     4. Wait for Vivado to complete implementation. After it finishes, a Bitstream Generation Completed message will pop up. Click **Cancel** to close it.
 
-![](images/system_design/image12.png)
+    ![](images/system_design/image12.png)
 
-Vivado Launch Run Configuration
+    Vivado Launch Run Configuration
 
 5. Export the hardware design:
 
-  1. Select **File → Export → Export Hardware**. The Export Hardware Platform window opens.
-  2. Click **Next**.
-  3. Select **Include Bitstream** and click **Next**.
-  4. Specify the XSA file name and path. This is kept at default in this example. Click **Next**.
-  5. Review the summary and click **Finish** to close the window.
-  6. The hardware platform XSA file is generated in the specified path.
+    1. Select **File → Export → Export Hardware**. The Export Hardware Platform window opens.
+    2. Click **Next**.
+    3. Select **Include Bitstream** and click **Next**.
+    4. Specify the XSA file name and path. This is kept at default in this example. Click **Next**.
+    5. Review the summary and click **Finish** to close the window.
+    6. The hardware platform XSA file is generated in the specified path.
 
 ## Configuring Software
 

@@ -77,7 +77,7 @@ The option to add bitstream, --fpga, is missing from the above command intention
 
 `petalinux-package --boot --fsbl zynqmp_fsbl.elf --fpga system.bit --pmufw pmufw.elf --atf bl31.elf --u-boot u-boot.elf`
 
-## Verifying the Image on the ZCU111 board
+## Verifying the Image on the Zynq board
 
 To verify the image, follow these steps:
 

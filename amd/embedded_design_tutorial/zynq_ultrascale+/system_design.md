@@ -143,16 +143,16 @@ We will run implementation of the Vivado design and export the post-implementati
     2. Save the block design (press **Ctrl+S**).
     3. Click the **Validate Design** button on the block diagram toolbar. Alternatively, press the **F6** key.
 
-    It takes a while to validate the design. A message dialog box pops up and states “Validation successful.       There are no errors or critical warnings in this design.” If it reports any errors or critical warnings,       review the     previous steps and correct the errors.
+      It takes a while to validate the design. A message dialog box pops up and states “Validation successful.       There are no errors or critical warnings in this design.” If it reports any errors or critical warnings,       review the     previous steps and correct the errors.
 
     4. Click **OK** to close the message.
 
 2. Generate output products:
 
-  1. Click **Generate Block Design** in the Flow Navigator panel.
-  2. Click **Generate**.
-  3. When the Generate Output Products process completes, click **OK**.
-  4. In the Block Diagram Sources window, click the **IP Sources** tab. Here you can see the output products that you just generated, as shown in the following figure.
+    1. Click **Generate Block Design** in the Flow Navigator panel.
+    2. Click **Generate**.
+    3. When the Generate Output Products process completes, click **OK**.
+    4. In the Block Diagram Sources window, click the **IP Sources** tab. Here you can see the output products        that you just generated, as shown in the following figure.
 
 ![](images/system_design/image11.png)
 

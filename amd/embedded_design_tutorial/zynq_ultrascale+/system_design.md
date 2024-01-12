@@ -296,7 +296,7 @@ Since we have already created the Linux domain on psu_cortexa53, it shows up in 
 
 3. Click **Finish**.
 
-The New Project wizard closes and the Vitis IDE creates the ps_pl_linux_app application project, which can be found in the Project Explorer view.
+  The New Project wizard closes and the Vitis IDE creates the ps_pl_linux_app application project, which can be found in the Project Explorer view.
 
 4. In the Project Explorer view, expand the **ps_pl_linux_app** project.
 5. Right-click the **src** directory, and select **Import** to open the Import view.

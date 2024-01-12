@@ -154,7 +154,7 @@ We will run implementation of the Vivado design and export the post-implementati
     3. When the Generate Output Products process completes, click **OK**.
     4. In the Block Diagram Sources window, click the **IP Sources** tab. Here you can see the output products        that you just generated, as shown in the following figure.
 
-  ![](images/system_design/image11.png)
+    ![](images/system_design/image11.png)
 
 3. Make sure you have an HDL top file. Because this design is saved from the introduction design, we have already done it.
 4. Run synthesis, implementation, and bitstream generation:

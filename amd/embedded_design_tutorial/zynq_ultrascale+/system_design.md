@@ -194,7 +194,7 @@ The application runs in an infinite while loop and sets the RPU in WFI mode afte
 
 1. Create the Linux images using PetaLinux. The Linux images must be created in sync with the hardware configuration for this design. You will also need to configure PetaLinux to create images for SD boot.
 2. Repeat steps 2 to 4 as described in [Creating a PetaLinux Image](linux_apps.md#Creating-a-PetaLinux-Image) to update the device tree and build Linux images using PetaLinux.
-3. Follow instructions in [Verifying the Image on the Zynq Board](linux_apps.md#) to verify the images.
+3. Follow instructions in [Verifying the Image on the Zynq Board](linux_apps.md#Verifying-the-Image-on-the-Zynq-Board) to verify the images.
 
 Make sure you have the following files for creating the Linux domain:
 

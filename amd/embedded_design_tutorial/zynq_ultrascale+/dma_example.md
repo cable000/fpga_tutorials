@@ -154,9 +154,13 @@ $ sudo rm -rfv /media/BOOT/
 $ sudo rm -rfv /media/rootfs/
 ```
 
+Install the SD card in the proper slot on the ZCU111 and boot into the Linux image.
 
+# Test DMA Application
 
+To run the DMA test application:
 
+```root@xilinx-zcu111-2021_2:/# /usr/bin/dmatest```
 
 
 

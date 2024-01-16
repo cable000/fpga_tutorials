@@ -19,11 +19,8 @@ Switch to the **Boards** tab in the **Default Part** window and search for the k
 
 # Create Block Design
 
-1. Start up a new Vivado project for the ZCU111 board.
-2. Select the **Create Block Design** and add the Zynq UltraScale+ MPSoC processor.
-3. Select **Run Block Automation**.
-4. Add an instance of the AXI Direct Memory Access IP block to the Vivado block design. Double-click on it to open the configuration window and uncheck the box next to Enable Scatter Gather Engine. This will automatically uncheck the box next to Enable Control / Status Stream as well.
+Once the new project has been generated, the first step is to create a new block design. Select the **Create Block Design** option from the Flow Navigator window on the left of the Vivado window.
 
-  The rest of the default options can be left for the AXI DMA IP. Click OK to close the configuration window.
+After the blank block design generates, click the **+** symbol in the middle and type zynq into the search bar of the window that appears. Double-click on the Zynq UltraScale+ MPSoC option that pops up to add the hooks to access the Zynq ARM processor that is physically instantiated in the programable logic of the FPGA.
 
-  Click the option to Run Connection Automation that appears in the green banner across the top of the block design window. Check the box for All Automation and click OK.
+![](images/dma_example/image3.png)

@@ -31,7 +31,7 @@ In the Zynq UltraScale+ MPSoC IP block under PS-PL Configuration, enable one of 
 
 ![](images/dma_example/image4.png)
 
-Zynq UltraScale+ MPSoC configuration window (double-click on Zynq UltraScale+ MPSoC IP to open)
+<p style="text-align: center;">Zynq UltraScale+ MPSoC configuration window (double-click on Zynq UltraScale+ MPSoC IP to open)</p>
 
 
 

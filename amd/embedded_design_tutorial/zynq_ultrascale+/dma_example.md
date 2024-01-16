@@ -94,7 +94,19 @@ The --enable flag at the end simply saves you the step of having to manually add
 
 Open dmatest.c from **./project-spec/meta-user/recipes-apps/dmatest/files** and add the code to it from this [dmatest.c](source/dmatest.c).
 
+# Build PetaLinux Project
 
+After adding the code to run the AXI DMA to the custom application, first build or rebuild the root filesystem.
+
+`$ petalinux-build -c rootfs`
+
+Then build or rebuild the whole PetaLinux project.
+
+`$ petalinux-build`
+
+After the PetaLinux project has built, generate the boot binary for the resultant embedded Linux image with the following command. Note that the force flag is needed if you have previously generated a boot binary for the PetaLinux project.
+
+`$ petalinux-package --boot --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/system.bit --u-boot --force`
 
 
 

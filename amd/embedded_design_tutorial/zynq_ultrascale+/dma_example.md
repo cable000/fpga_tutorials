@@ -48,6 +48,6 @@ For this project we will connect an AXI Stream Data FIFO IP block, connecting it
 
 ![](images/dma_example/image6.png)
 
-<center">Block diagram in Vivado with AXI DMA and AXI stream data FIFO.</center>
+<center>Block diagram in Vivado with AXI DMA and AXI stream data FIFO.</center>
 
 

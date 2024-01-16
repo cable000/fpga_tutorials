@@ -55,7 +55,15 @@ Validate the block design and save it. Then generate or regenerate an HDL wrappe
 
 In the resulting pop-up window, select the option **Let Vivado manage wrapper and auto-update**.
 
-Once the Sources window shows that Vivado is finished updating the project file structure (the word Updating... disappears from the upper right corner of the window) run synthesis, implementation, and generate a new bitstream. After a new bitstream has been generated, export the hardware for use in PetaLinux by selecting File > Export > Export Hardware...
+Once the Sources window shows that Vivado is finished updating the project file structure (the word Updating... disappears from the upper right corner of the window) run synthesis, implementation, and generate a new bitstream (selecting **Generate Bitstream** will run synthesis and implementation). After a new bitstream has been generated, export the hardware for use in PetaLinux by selecting **File > Export > Export Hardware...**
+
+![](images/dma_example/image8.png)
+
+Select the option to include the bitstream in the exported hardware platform and specify the desired output file path. As the default you can use the main project folder for the respective Vivado project. The final screen in the pop-up window will summarize your selections for verification. Click Finish to export the hardware as the Xilinx filetype .XSA
+
+
+
+
 
 
 

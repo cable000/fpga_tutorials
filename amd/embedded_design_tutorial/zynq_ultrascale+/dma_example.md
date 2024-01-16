@@ -108,6 +108,13 @@ After the PetaLinux project has built, generate the boot binary for the resultan
 
 `$ petalinux-package --boot --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/system.bit --u-boot --force`
 
+# Load SD Card
+
+To prepare the SD card for loading the embedded Linux onto it, it needs to have two main partitions on it. A FAT32 partition that is at least 500MB with 4MB of free space preceding it in the first partition. This is the partition where all of the files related to the boot process will live such as the boot binary image and the kernel. The second partition needed is an EXT4 partition at least 4GB in size, this is the partition where the root filesystem will live. Configure the rest of the free space after the FAT32 partition on the SD card as the EXT4 partition. 
+
+Recommend using a UI like Gparted for configuring the partitions on SD cards. Usually find a little easier to work with the UI but you can use command line tools to partititon the SD card.
+
+![](images/dma_example/image10.png)
 
 
 

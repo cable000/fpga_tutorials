@@ -49,4 +49,16 @@ For this project we will connect an AXI Stream Data FIFO IP block, connecting it
 ![](images/dma_example/image6.png)
 *Block diagram in Vivado with AXI DMA and AXI stream data FIFO.*
 
+Validate the block design and save it. Then generate or regenerate an HDL wrapper for it by right-clicking on the block design in the Sources window and selecting the option to Create HDL Wrapper...
+
+![](images/dma_example/image7.png)
+
+In the resulting pop-up window, select the option **Let Vivado manage wrapper and auto-update**.
+
+Once the Sources window shows that Vivado is finished updating the project file structure (the word Updating... disappears from the upper right corner of the window) run synthesis, implementation, and generate a new bitstream. After a new bitstream has been generated, export the hardware for use in PetaLinux by selecting File > Export > Export Hardware...
+
+
+
+
+
 

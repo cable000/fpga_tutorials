@@ -112,9 +112,38 @@ After the PetaLinux project has built, generate the boot binary for the resultan
 
 To prepare the SD card for loading the embedded Linux onto it, it needs to have two main partitions on it. A FAT32 partition that is at least 500MB with 4MB of free space preceding it in the first partition. This is the partition where all of the files related to the boot process will live such as the boot binary image and the kernel. The second partition needed is an EXT4 partition at least 4GB in size, this is the partition where the root filesystem will live. Configure the rest of the free space after the FAT32 partition on the SD card as the EXT4 partition. 
 
-Recommend using a UI like Gparted for configuring the partitions on SD cards. Usually find a little easier to work with the UI but you can use command line tools to partititon the SD card.
+Recommend using a UI like Gparted for configuring the partitions on SD cards. Usually find a little easier to work with the UI but you can use command line tools to partititon the SD card. The SD card used with this example was 16GB.
 
 ![](images/dma_example/image10.png)
+
+After the SD card is properly partitioned, load it with the Linux image created by the PetaLinux project.
+
+If you haven't already, start by making a mounting point folder for each of the two partitions then mount each of the partitions to their respective mounting folders.
+
+All of the Linux image files from the PetaLinux project needed for the SD card, are located in the /<PetaLinux project directory>/images/linux/ directory, which appears after a successful build of the project is executed.
+
+The boot files can simply be copied to the FAT32 partition, but the root filesystem needs to be extracted using a command like tar onto the EXT4 partition. Once all of the files are placed in the proper partitions, use the sync command to ensure the transfers are properly completed and the SD card can be safely unmounted from the host machine.
+
+After the sync command has completed, unmount each of the two partitions before removing the SD card.
+
+```
+$ mkdir /media/BOOT
+$ mkdir /media/rootfs
+
+$ sudo mount /dev/sdc1 /media/BOOT
+$ sudo mount /dev/sdc2 /media/rootfs
+
+$ sudo cp /<petalinux project dir>/images/linux/BOOT.BIN /media/BOOT/
+$ sudo cp /<petalinux project dir>/images/linux/image.ub /media/BOOT/
+$ sudo cp /<petalinux project dir>/images/linux/boot.scr /media/BOOT/
+
+$ sudo tar xvf /<petalinux project dir>/images/linux/rootfs.tar.gz -C /media/rootfs/
+
+$ sync
+
+$ sudo umount /media/BOOT/
+$ sudo umount /media/rootfs/
+'''
 
 
 

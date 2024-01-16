@@ -71,7 +71,12 @@ Create/change directories into the desired path for the PetaLinux project, then 
 
 `$ petalinux-create -t project -s <xilinx-zcu111-v2021.2-final.bsp>`
 
-This should create a **xilinx-zcu111-2021.2** folder in the folder that was used to create the project. Change into this directory to start configuring it.
+This should create a **xilinx-zcu111-2021.2** folder. Change into this directory to start configuring it.
+
+`$ cd ./xilinx-zcu111-2021.2`
+
+
+
 
 
 

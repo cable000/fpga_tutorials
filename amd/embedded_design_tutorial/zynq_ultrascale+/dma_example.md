@@ -146,6 +146,13 @@ $ sudo umount /media/BOOT/
 $ sudo umount /media/rootfs/
 ```
 
+If you are re-imaging the SD card, it is recommended to remove the previous files from each partition prior to copying over the new ones. I've found that simply overwriting the files can cause weird things to happen, especially on the EXT4 partition with the root filesystem.
+
+
+```
+$ sudo rm -rfv /media/BOOT/
+$ sudo rm -rfv /media/rootfs/
+```
 
 
 

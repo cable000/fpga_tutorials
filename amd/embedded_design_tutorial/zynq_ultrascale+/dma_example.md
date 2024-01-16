@@ -92,7 +92,7 @@ This project will be demonstrating how to use AXI DMA from the OS/application la
 
 The --enable flag at the end simply saves you the step of having to manually add the application to be included in the next PetaLinux build using the root filesystem configuration ASCII GUI.
 
-Open dmatest.c from **./project-spec/meta-user/recipes-apps/dmatest/files** and add the code to it from the dmatest.c file from [here](sources/dmatest.c)
+Open dmatest.c from **./project-spec/meta-user/recipes-apps/dmatest/files** and add the code to it from this [dmatest.c](sources/dmatest.c).
 
 
 

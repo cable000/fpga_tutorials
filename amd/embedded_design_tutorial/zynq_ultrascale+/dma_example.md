@@ -106,7 +106,7 @@ Then build or rebuild the whole PetaLinux project.
 
 After the PetaLinux project has built, generate the boot binary for the resultant embedded Linux image with the following command. Note that the force flag is needed if you have previously generated a boot binary for the PetaLinux project.
 
-`$ petalinux-package --boot --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/system.bit --u-boot --force`
+`$ petalinux-package --boot --fsbl ./images/linux/zynqmp_fsbl.elf --fpga ./images/linux/system.bit --u-boot --force`
 
 # Load SD Card
 
@@ -120,18 +120,19 @@ After the SD card is properly partitioned, load it with the Linux image created 
 
 If you haven't already, start by making a mounting point folder for each of the two partitions then mount each of the partitions to their respective mounting folders.
 
-All of the Linux image files from the PetaLinux project needed for the SD card, are located in the /<PetaLinux project directory>/images/linux/ directory, which appears after a successful build of the project is executed.
+All of the Linux image files from the PetaLinux project needed for the SD card, are located in the /\<Petalinux Project Directory\>/images/linux/ directory, which appears after a successful build of the project is executed.
 
 The boot files can simply be copied to the FAT32 partition, but the root filesystem needs to be extracted using a command like tar onto the EXT4 partition. Once all of the files are placed in the proper partitions, use the sync command to ensure the transfers are properly completed and the SD card can be safely unmounted from the host machine.
 
-After the sync command has completed, unmount each of the two partitions before removing the SD card.
+After the sync command has completed, umount each of the two partitions before removing the SD card.
 
 ```
 $ mkdir /media/BOOT
 $ mkdir /media/rootfs
 
-$ sudo mount /dev/sdc1 /media/BOOT
-$ sudo mount /dev/sdc2 /media/rootfs
+# Warning: The dev may be different from sdb1/sdb2
+$ sudo mount /dev/sdb1 /media/BOOT
+$ sudo mount /dev/sdb2 /media/rootfs
 
 $ sudo cp /<petalinux project dir>/images/linux/BOOT.BIN /media/BOOT/
 $ sudo cp /<petalinux project dir>/images/linux/image.ub /media/BOOT/

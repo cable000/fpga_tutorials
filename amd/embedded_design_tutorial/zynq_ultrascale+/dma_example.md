@@ -143,7 +143,7 @@ $ sync
 
 $ sudo umount /media/BOOT/
 $ sudo umount /media/rootfs/
-'''
+```
 
 
 

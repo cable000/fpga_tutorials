@@ -47,7 +47,6 @@ With the AXI DMA now added and connected to the Zynq UltraScale+ MPSoC, the AXI 
 For this project we will connect an AXI Stream Data FIFO IP block, connecting its S_AXIS port to M_AXIS_MM2S and its M_AXIS port to S_AXIS_S2MM.
 
 ![](images/dma_example/image6.png)
-
-<center>Block diagram in Vivado with AXI DMA and AXI stream data FIFO.</center>
+*Block diagram in Vivado with AXI DMA and AXI stream data FIFO.*
 
 

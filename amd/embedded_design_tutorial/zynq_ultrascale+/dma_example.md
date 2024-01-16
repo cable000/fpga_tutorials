@@ -162,6 +162,8 @@ To run the DMA test application:
 
 ```root@xilinx-zcu111-2021_2:/# /usr/bin/dmatest```
 
+Looking at the code in dmatest.c, you'll notice that the DMA is being tested in that a recognizable pattern of data is being written to the source address in DDR and is then checking to see if that is what ends up in the destination address. Each step from the DMA transfer process specified above is also outlined with print statements.
+
 
 
 

@@ -75,6 +75,17 @@ This should create a **xilinx-zcu111-2021.2** folder. Change into this directory
 
 `$ cd ./xilinx-zcu111-2021.2`
 
+Import the new hardware design into the project with the following command:
+
+`$ petalinux-config --get-hw-description /<directory of .XSA file>/`
+
+This command pulls the hardware design into the PetaLinux project and launches the System configuration GUI for you to specify hardware configurations. For this project we are not making any other changes to the hardware in the PetaLinux outside of importing the new hardware design that now has the AXI DMA in it. Toggle to select **E** to exit if you have made no changes, **S** if you have made changes you want to save.
+
+![](images/dma_example/image9.png)
+*System configuration GUI*
+
+
+
 
 
 

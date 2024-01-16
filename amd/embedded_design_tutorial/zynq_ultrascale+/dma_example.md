@@ -67,6 +67,10 @@ Start by sourcing the PetaLinux tools to your environment:
 
 `$ source /<PetaLinux install directory>/2021.2/settings.sh`
 
+Create/change directories into the desired path for the PetaLinux project, then run the following command to create the PetaLinux project:
+
+`$ petalinux-create --type project --template zynq --name artyz7_os`
+
 
 
 

@@ -245,17 +245,16 @@ void print_mem(void *virtual_address, int byte_count)
 int main()
 {
     printf("Hello World! - Running DMA transfer test application.\n");
+    printf("Opening a character device file of the ZCU111 DDR memeory...\n");
+    int ddr_memory = open("/dev/mem", O_RDWR | O_SYNC);
 
-	printf("Opening a character device file of the Arty's DDR memeory...\n");
-	int ddr_memory = open("/dev/mem", O_RDWR | O_SYNC);
-
-	printf("Memory map the address of the DMA AXI IP via its AXI lite control interface register block.\n");
+    printf("Memory map the address of the DMA AXI IP via its AXI lite control interface register block.\n");
     unsigned int *dma_virtual_addr = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x40400000);
 
-	printf("Memory map the MM2S source address register block.\n");
+    printf("Memory map the MM2S source address register block.\n");
     unsigned int *virtual_src_addr  = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x0e000000);
 
-	printf("Memory map the S2MM destination address register block.\n");
+    printf("Memory map the S2MM destination address register block.\n");
     unsigned int *virtual_dst_addr = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x0f000000);
 
 	printf("Writing random data to source register block...\n");
@@ -303,11 +302,11 @@ int main()
     write_dma(dma_virtual_addr, S2MM_DST_ADDRESS_REGISTER, 0x0f000000);
     dma_s2mm_status(dma_virtual_addr);
 
-	printf("Run the MM2S channel.\n");
+    printf("Run the MM2S channel.\n");
     write_dma(dma_virtual_addr, MM2S_CONTROL_REGISTER, RUN_DMA);
     dma_mm2s_status(dma_virtual_addr);
 
-	printf("Run the S2MM channel.\n");
+    printf("Run the S2MM channel.\n");
     write_dma(dma_virtual_addr, S2MM_CONTROL_REGISTER, RUN_DMA);
     dma_s2mm_status(dma_virtual_addr);
 

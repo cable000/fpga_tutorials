@@ -69,7 +69,11 @@ Start by sourcing the PetaLinux tools to your environment:
 
 Create/change directories into the desired path for the PetaLinux project, then run the following command to create the PetaLinux project:
 
-`$ petalinux-create --type project --template zynq --name artyz7_os`
+`$ petalinux-create -t project -s <xilinx-zcu111-v2021.2-final.bsp>`
+
+This should create a **xilinx-zcu111-2021.2** folder in the folder that was used to create the project. Change into this directory to start configuring it.
+
+
 
 
 

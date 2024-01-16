@@ -59,7 +59,13 @@ Once the Sources window shows that Vivado is finished updating the project file 
 
 ![](images/dma_example/image8.png)
 
-Select the option to include the bitstream in the exported hardware platform and specify the desired output file path. As the default you can use the main project folder for the respective Vivado project. The final screen in the pop-up window will summarize your selections for verification. Click Finish to export the hardware as the Xilinx filetype .XSA
+Select the option to include the bitstream in the exported hardware platform and specify the desired output file path. As the default you can use the main project folder for the respective Vivado project. The final screen in the pop-up window will summarize your selections for verification. Click **Finish** to export the hardware as the Xilinx filetype .XSA
+
+# Create PetaLinux Project
+
+Start by sourcing the PetaLinux tools to your environment:
+
+`$ source /<PetaLinux install directory>/2021.2/settings.sh`
 
 
 

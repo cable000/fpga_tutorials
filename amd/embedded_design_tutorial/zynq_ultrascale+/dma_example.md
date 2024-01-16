@@ -13,6 +13,10 @@ Launch Vivado and select the option to create a new project. Give it the desired
 
 ![](images/dma_example/image1.png)
 
+Switch to the **Boards** tab in the **Default Part** window and search for the key term **zcu111**
+
+![](images/dma_example/image2.png)
+
 1. Start up a new Vivado project for the ZCU111 board.
 2. Select the **Create Block Design** and add the Zynq UltraScale+ MPSoC processor.
 3. Select **Run Block Automation**.

@@ -84,7 +84,15 @@ This command pulls the hardware design into the PetaLinux project and launches t
 ![](images/dma_example/image9.png)
 *System configuration GUI*
 
+# Create Custom Application in PetaLinux
 
+This project will be demonstrating how to use AXI DMA from the OS/application layer in Linux using memory mapping. A custom application needs to be added to the PetaLinux project with the following command:
+
+`$ petalinux-create -t apps --template c --name dmatest --enable`
+
+The --enable flag at the end simply saves you the step of having to manually add the application to be included in the next PetaLinux build using the root filesystem configuration ASCII GUI.
+
+Open dmatest.c from **./project-spec/meta-user/recipes-apps/dmatest/files** and add the code to it from the dmatest.c file from [here](sources/dmatest.c)
 
 
 

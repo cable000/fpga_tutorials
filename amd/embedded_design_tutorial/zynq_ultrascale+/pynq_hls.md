@@ -29,7 +29,7 @@ alias vitis_hls="/tools/software/xilinx/Vitis_HLS/2021.1/bin/vitis_hls"
 alias vivado="/tools/software/xilinx/Vivado/2021.1/bin/vivado"
 ```
 
-## Pynq OS Setup
+## PYNQ OS Setup
 
 MicroSD Card Setup
 To make your own PYNQ Micro-SD card:

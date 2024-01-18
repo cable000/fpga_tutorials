@@ -11,6 +11,7 @@ This command will run RTL synthesis, simulation, implementation and package the 
 # Validate IP package in Vivado
 
 In the same directory execute the following command to open up Vivado:
+
 `vivado`
 
 

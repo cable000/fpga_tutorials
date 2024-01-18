@@ -29,6 +29,17 @@ alias vitis_hls="/tools/software/xilinx/Vitis_HLS/2021.1/bin/vitis_hls"
 alias vivado="/tools/software/xilinx/Vivado/2021.1/bin/vivado"
 ```
 
+## Pynq OS Setup
+
+MicroSD Card Setup
+To make your own PYNQ Micro-SD card:
+
+Download the [ZCU111 v2.7 PYNQ](http://www.pynq.io/board.html) image for your board
+Unzip the image
+Write the image to a blank Micro SD card (minimum 8GB recommended)
+
+For detailed instructions on writing the SD card using different operating systems, see [Writing the SD Card Image](https://pynq.readthedocs.io/en/v2.3/appendix.html#writing-the-sd-card).
+
 ## Design a simple adder using Vitis HLS
 
 We first build a vector addition function using C++ in Vitis HLS. Later, we export the RTL (Verilog) design in Vivado to implement it on the board.

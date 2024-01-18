@@ -34,9 +34,9 @@ alias vivado="/tools/software/xilinx/Vivado/2021.1/bin/vivado"
 MicroSD Card Setup
 To make your own PYNQ Micro-SD card:
 
-Download the [ZCU111 v2.7 PYNQ](http://www.pynq.io/board.html) image for your board
-Unzip the image
-Write the image to a blank Micro SD card (minimum 8GB recommended)
+1. Download the [ZCU111 v2.7 PYNQ](http://www.pynq.io/board.html) image for your board
+2. Unzip the image
+3. Write the image to a blank Micro SD card (minimum 8GB recommended)
 
 For detailed instructions on writing the SD card using different operating systems, see [Writing the SD Card Image](https://pynq.readthedocs.io/en/v2.3/appendix.html#writing-the-sd-card).
 

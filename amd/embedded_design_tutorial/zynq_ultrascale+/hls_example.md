@@ -20,6 +20,19 @@ Under **Project Manager** select **Settings** and the following window should be
 
 ![](images/hls_example/image1.png)
 
+Select **IP->Repository** and then click the **+"" to add the hls_example folder that contains the example IP package.
+
+![](images/hls_example/image2.png)
+
+
+Select the **Example Design** repository and click **OK** in this window. 
+
+![](images/hls_example/image3.png)
+
+
+
+
+
 
 
 

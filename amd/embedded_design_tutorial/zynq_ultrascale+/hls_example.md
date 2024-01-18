@@ -29,9 +29,17 @@ Select the **Example Design** repository and click **OK** in this window.
 
 ![](images/hls_example/image3.png)
 
-In the **Settings** window it should show your new repository
+In the **Settings** window it will show that you have added this folder as an IP repository. Select **OK** to exit from this window.
 
 ![](images/hls_example/image4.png)
+
+Now select **Create Block Design** under **IP Integrator**. when the **Generate Block Design** pops up just use the default settings and select **OK**.
+
+In the **Diagram** window select the **+** button and then search for **Example Design**. If everything was generated and added correctly you should see a match. Select the Example Design IP and it will display on the block diagram.
+
+![](images/hls_example/image5.png)
+
+![](images/hls_example/image6.png)
 
 
 

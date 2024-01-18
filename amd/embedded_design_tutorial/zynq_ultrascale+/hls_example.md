@@ -14,6 +14,12 @@ In the same directory execute the following command to open up Vivado:
 
 `vivado`
 
+1. Select **Create Project** and keep selecting **Next** until you get to the **Default Part** window. On this window select **Boards** and search for **zcu111** and select this board. Select **Next** and then **Finish** to exit.
+
+Under **Project Manager** select **Settings** and the following window should be displayed.
+
+![](images/hls_example/image1.png)
+
 
 
 

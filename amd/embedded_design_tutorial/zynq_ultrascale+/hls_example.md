@@ -29,6 +29,11 @@ Select the **Example Design** repository and click **OK** in this window.
 
 ![](images/hls_example/image3.png)
 
+In the **Settings** window it should show your new repository
+
+![](images/hls_example/image4.png)
+
+
 
 
 

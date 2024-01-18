@@ -19,12 +19,18 @@ The examples in this document were created using Xilinx tools running on Ubuntu,
 
 [System Design Example: Using DMA in Embedded Linux](dma_example.md). This tutorial will demonstrate an application that reads/writes data to DDR memory from the Linux userspace.
 
-[Xilinx Vitis Custom Embedded Platform Creation Example on ZCU104](https://github.com/Xilinx/Vitis-Tutorials/blob/2021.2/Vitis_Platform_Creation/Introduction/02-Edge-AI-ZCU104/README.md) AMD tutorial on creating a custom Vitis embedded platform for ZCU104. It will be capable to run Vitis acceleration applications including Vitis-AI applications. Of course, general embedded software application can also run on this platform. This tutorial uses Application Acceleration Development Flow. 
 
 [Boot and Configuration](boot_config.md) shows the integration of components to configure and create boot images for a Zynq UltraScale+ system. The purpose of this chapter is to understand how to integrate and load boot loaders.
 
 Secure Boot is an optional chapter that introduces the steps to build the Hardware Root of Trust and encryption for your design.
 
+# Application Acceleration Development Flow tutorials
+
+[Xilinx Vitis Custom Embedded Platform Creation Example on ZCU104](https://github.com/Xilinx/Vitis-Tutorials/blob/2021.2/Vitis_Platform_Creation/Introduction/02-Edge-AI-ZCU104/README.md) AMD tutorial on creating a custom Vitis embedded platform for ZCU104. It will be capable to run Vitis acceleration applications including Vitis-AI applications. Of course, general embedded software application can also run on this platform. This tutorial uses Application Acceleration Development Flow. 
+
+# Pynq Tutorials
+
+[Pynq HLS Tutorial](pynq_hls.md)
 
 ## Support Files
 

@@ -35,9 +35,7 @@ In the **Settings** window it will show that you have added this folder as an IP
 
 Now select **Create Block Design** under **IP Integrator**. when the **Generate Block Design** pops up just use the default settings and select **OK**.
 
-In the **Diagram** window select the **+** button and then search for **Example Design**. If everything was generated and added correctly you should see a match. Select the Example Design IP and it will display on the block diagram.
-
-![](images/hls_example/image5.png)
+In the **Diagram** window select the **+** button and then search for **Example Design**. If everything was generated and added correctly you should see a match. Select the Example Design IP and it will be added to your block diagram.
 
 ![](images/hls_example/image6.png)
 
